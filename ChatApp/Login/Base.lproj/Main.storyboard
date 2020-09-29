@@ -42,10 +42,39 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWJ-EN-tno">
+                                <rect key="frame" x="0.0" y="44" width="414" height="331"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7sz-UU-1oy">
+                                        <rect key="frame" x="102" y="86" width="210" height="158.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="7sz-UU-1oy" secondAttribute="height" multiplier="70:53" id="KKb-iN-HPT"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smiley.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Xt3-9G-fsc">
+                                        <rect key="frame" x="158" y="119.5" width="98" height="74"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Xt3-9G-fsc" firstAttribute="centerX" secondItem="7sz-UU-1oy" secondAttribute="centerX" id="3hB-1S-0Jd"/>
+                                    <constraint firstItem="7sz-UU-1oy" firstAttribute="width" secondItem="BWJ-EN-tno" secondAttribute="width" multiplier="0.507246" id="4Rb-6K-DCf"/>
+                                    <constraint firstItem="Xt3-9G-fsc" firstAttribute="centerY" secondItem="7sz-UU-1oy" secondAttribute="centerY" constant="-9" id="9gn-OW-pcD"/>
+                                    <constraint firstItem="7sz-UU-1oy" firstAttribute="centerX" secondItem="BWJ-EN-tno" secondAttribute="centerX" id="AQY-BX-CxE"/>
+                                    <constraint firstItem="Xt3-9G-fsc" firstAttribute="height" secondItem="7sz-UU-1oy" secondAttribute="height" multiplier="0.471698" id="gJf-mZ-MJv"/>
+                                    <constraint firstItem="Xt3-9G-fsc" firstAttribute="width" secondItem="7sz-UU-1oy" secondAttribute="width" multiplier="0.466667" id="jYO-bT-siK"/>
+                                    <constraint firstItem="7sz-UU-1oy" firstAttribute="centerY" secondItem="BWJ-EN-tno" secondAttribute="centerY" id="kAM-Tt-JQx"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="qZf-my-VIK" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="67t-e7-9Dt"/>
+                            <constraint firstItem="BWJ-EN-tno" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Qf4-7q-U4a"/>
+                            <constraint firstItem="qZf-my-VIK" firstAttribute="top" secondItem="BWJ-EN-tno" secondAttribute="bottom" id="Xj2-Jf-Wkx"/>
+                            <constraint firstItem="BWJ-EN-tno" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bXr-vV-tdh"/>
+                            <constraint firstItem="BWJ-EN-tno" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nhk-cD-ND5"/>
                             <constraint firstItem="qZf-my-VIK" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oSX-nH-iOm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -62,4 +91,8 @@
             <point key="canvasLocation" x="-123.18840579710145" y="-5.3571428571428568"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="message.fill" catalog="system" width="128" height="113"/>
+        <image name="smiley.fill" catalog="system" width="128" height="121"/>
+    </resources>
 </document>
