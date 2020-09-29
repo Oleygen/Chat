@@ -13,7 +13,7 @@ class LoginModel {
     
     let apiManager = APIManager.shared
     
-    weak var loginViewController: LoginViewController!
+    weak var view: LoginViewController!
     
     func createAccount(email: String,
                        password: String) {
@@ -36,7 +36,7 @@ class LoginModel {
     }
     
     private func authenticationError() {
-        loginViewController.showError()
+        view.showError()
     }
     
 }

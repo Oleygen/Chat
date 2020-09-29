@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loginModel.view = self
     }
     
     @IBAction func createAccountButtonAction(_ sender: Any) {
@@ -38,6 +38,7 @@ class LoginViewController: UIViewController {
     func showError() {
         showAlert()
     }
+    
     
     // MARK: - Private
     
