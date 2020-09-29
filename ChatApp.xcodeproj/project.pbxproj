@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		B75E001C2523AC380054EF32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B75E001B2523AC380054EF32 /* Assets.xcassets */; };
 		B75E001F2523AC380054EF32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B75E001D2523AC380054EF32 /* LaunchScreen.storyboard */; };
 		B7CFF9342523AE9300B6DA6D /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CFF9332523AE9300B6DA6D /* LoginModel.swift */; };
+		B7CFF9362523B75B00B6DA6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7CFF9352523B75A00B6DA6D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		B75E001E2523AC380054EF32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B75E00202523AC380054EF32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7CFF9332523AE9300B6DA6D /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		B7CFF9352523B75A00B6DA6D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E69567C65F8AB33756281F10 /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,7 +52,6 @@
 				5E878EB7C327C76037518484 /* Pods-ChatApp.debug.xcconfig */,
 				E69567C65F8AB33756281F10 /* Pods-ChatApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,6 +82,7 @@
 				B7CFF9322523AE6500B6DA6D /* Login */,
 				B75E001B2523AC380054EF32 /* Assets.xcassets */,
 				B75E001D2523AC380054EF32 /* LaunchScreen.storyboard */,
+				B7CFF9352523B75A00B6DA6D /* GoogleService-Info.plist */,
 				B75E00202523AC380054EF32 /* Info.plist */,
 			);
 			path = ChatApp;
@@ -164,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B75E001F2523AC380054EF32 /* LaunchScreen.storyboard in Resources */,
+				B7CFF9362523B75B00B6DA6D /* GoogleService-Info.plist in Resources */,
 				B75E001C2523AC380054EF32 /* Assets.xcassets in Resources */,
 				B75E001A2523AC370054EF32 /* Main.storyboard in Resources */,
 			);
