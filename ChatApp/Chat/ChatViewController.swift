@@ -19,6 +19,7 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setupGestures()
     }
     
     private func setupTableView() {
@@ -26,12 +27,23 @@ class ChatViewController: UIViewController {
         chatTableView.dataSource = self
     }
     
+    private func setupGestures() {
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+            
+        leftSwipe.direction = .left
+        rightSwipe.direction = .right
+
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
+    }
+    
     @IBAction func sendButtonAction(_ sender: Any) {
-        burgerMenu(show: true)
+        
     }
     
     @IBAction func burgerDebugButton(_ sender: Any) {
-        burgerMenu(show: false)
+        
     }
     
     private func burgerMenu(show: Bool) {
@@ -48,6 +60,15 @@ class ChatViewController: UIViewController {
             transition.subtype = CATransitionSubtype.fromRight
             burgerMenuView.layer.add(transition, forKey: kCATransition)
             burgerMenuView.isHidden = true
+        }
+    }
+    
+    @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
+        if (sender.direction == .left) {
+            burgerMenu(show: false)
+        }
+        if (sender.direction == .right) {
+            burgerMenu(show: true)
         }
     }
 
