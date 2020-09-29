@@ -11,6 +11,10 @@ import UIKit
 class ChatViewController: UIViewController {
     
     @IBOutlet weak var chatTableView: UITableView!
+    
+    @IBOutlet weak var burgerMenuView: UIView!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +24,31 @@ class ChatViewController: UIViewController {
     private func setupTableView() {
         chatTableView.delegate = self
         chatTableView.dataSource = self
+    }
+    
+    @IBAction func sendButtonAction(_ sender: Any) {
+        burgerMenu(show: true)
+    }
+    
+    @IBAction func burgerDebugButton(_ sender: Any) {
+        burgerMenu(show: false)
+    }
+    
+    private func burgerMenu(show: Bool) {
+        let transition = CATransition()
+        transition.duration = 0.25
+        transition.type = CATransitionType.push
+        if show {
+            if !burgerMenuView.isHidden { return }
+            transition.subtype = CATransitionSubtype.fromLeft
+            burgerMenuView.layer.add(transition, forKey: kCATransition)
+            burgerMenuView.isHidden = false
+        } else {
+            if burgerMenuView.isHidden { return }
+            transition.subtype = CATransitionSubtype.fromRight
+            burgerMenuView.layer.add(transition, forKey: kCATransition)
+            burgerMenuView.isHidden = true
+        }
     }
 
 }
