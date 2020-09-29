@@ -14,11 +14,15 @@ class APIManager {
     static let shared = APIManager()
     private init() { }
     
-    func createAccount(email: String, password: String) {
+    func createAccount(email: String,
+                       password: String,
+                       completion: @escaping (AuthDataResult?, Error?) -> Void) {
         Auth.auth().createUser(withEmail: email,
-                               password: password) { (user: AuthDataResult?, error) in
+                               password: password)
+                               { (user: AuthDataResult?, error: Error?) in
             print("user \(String(describing: user))")
             print("error \(String(describing: error))")
+            completion(user, error)
         }
     }
     
