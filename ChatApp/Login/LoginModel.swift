@@ -32,7 +32,7 @@ class LoginModel {
     }
     
     private func didCreateAccount() {
-        
+        view.didCreateAccount()
     }
     
     private func authenticationError() {
