@@ -36,6 +36,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwA-gn-GyW">
                                         <rect key="frame" x="0.0" y="126" width="143.5" height="30"/>
                                         <state key="normal" title="Create account"/>
+                                        <connections>
+                                            <action selector="createAccountButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b8x-Ab-1Zv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

@@ -16,6 +16,7 @@
 		B75E001F2523AC380054EF32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B75E001D2523AC380054EF32 /* LaunchScreen.storyboard */; };
 		B7CFF9342523AE9300B6DA6D /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CFF9332523AE9300B6DA6D /* LoginModel.swift */; };
 		B7CFF9362523B75B00B6DA6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7CFF9352523B75A00B6DA6D /* GoogleService-Info.plist */; };
+		B7CFF9382523BB8D00B6DA6D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CFF9372523BB8D00B6DA6D /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		B75E00202523AC380054EF32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7CFF9332523AE9300B6DA6D /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		B7CFF9352523B75A00B6DA6D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B7CFF9372523BB8D00B6DA6D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		E69567C65F8AB33756281F10 /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 				B75E00142523AC370054EF32 /* SceneDelegate.swift */,
 				B75E00182523AC370054EF32 /* Main.storyboard */,
 				B7CFF9322523AE6500B6DA6D /* Login */,
+				B7CFF9372523BB8D00B6DA6D /* APIManager.swift */,
 				B75E001B2523AC380054EF32 /* Assets.xcassets */,
 				B75E001D2523AC380054EF32 /* LaunchScreen.storyboard */,
 				B7CFF9352523B75A00B6DA6D /* GoogleService-Info.plist */,
@@ -223,6 +226,7 @@
 			files = (
 				B75E00172523AC370054EF32 /* LoginViewController.swift in Sources */,
 				B7CFF9342523AE9300B6DA6D /* LoginModel.swift in Sources */,
+				B7CFF9382523BB8D00B6DA6D /* APIManager.swift in Sources */,
 				B75E00132523AC370054EF32 /* AppDelegate.swift in Sources */,
 				B75E00152523AC370054EF32 /* SceneDelegate.swift in Sources */,
 			);

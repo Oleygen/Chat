@@ -8,12 +8,13 @@
 
 import Foundation
 
+
 class LoginModel {
     
+    let apiManager = APIManager.shared
     
-    
-    
-    
-    
+    func createAccount(email: String, password: String) {
+        apiManager.createAccount(email: "testAccount1@gmail.com", password: "12345678")
+    }
     
 }

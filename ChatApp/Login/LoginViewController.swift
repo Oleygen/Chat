@@ -22,9 +22,37 @@ class LoginViewController: UIViewController {
         
     }
     
+    @IBAction func createAccountButtonAction(_ sender: Any) {
+        guard let email = emailTextField.text, !email.isEmpty else {
+            showAlert()
+            return
+        }
+        guard let password = getPassword() else {
+            showAlert()
+            return
+        }
+        loginModel.createAccount(email: email,
+                                 password: password)
+    }
     
+    private func getPassword() -> String? {
+        guard let password = passwordTextField.text,
+                  !password.isEmpty else { return nil }
+        guard let confirmPassword = confirmPasswordTextField.text,
+                  !confirmPassword.isEmpty else { return nil }
+        guard password == confirmPassword else { return nil }
+        return password
+    }
     
+    private func showAlert() {
+        let alert = UIAlertController(title: "Error",
+                                      message: "Try later",
+                                      preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok",
+                                      style: UIAlertAction.Style.default,
+                                      handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
     
-
 }
 
