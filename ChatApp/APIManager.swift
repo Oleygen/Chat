@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import FirebaseAuth
+import Firebase
 
 class APIManager {
     
@@ -28,10 +28,10 @@ class APIManager {
     
     
     func signOut() {
-//        do {
-//            try firebaseAuth.signOut()
-//        } catch let signOutError as NSError {
-//            print ("Error signing out: %@", signOutError)
-//        }
+        do {
+            try Firebase.Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
     }
 }
