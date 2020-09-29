@@ -13,16 +13,30 @@ class LoginModel {
     
     let apiManager = APIManager.shared
     
+    weak var loginViewController: LoginViewController!
+    
     func createAccount(email: String,
                        password: String) {
-        apiManager.createAccount(email: "testAccount1@gmail.com",
-                                 password: "12345678") { (user, error) in
-            self.didCreateAccount()
+        apiManager.createAccount(email: email,
+                                 password: password) { [weak self] (user, error) in
+            guard let self = self else { return }
+            guard let error = error else {
+                self.authenticationError()
+                return
+            }
+            guard let user = user else {
+                self.didCreateAccount()
+                return
+            }
         }
     }
     
     private func didCreateAccount() {
         
+    }
+    
+    private func authenticationError() {
+        loginViewController.showError()
     }
     
 }

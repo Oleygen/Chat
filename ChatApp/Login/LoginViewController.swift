@@ -35,6 +35,12 @@ class LoginViewController: UIViewController {
                                  password: password)
     }
     
+    func showError() {
+        showAlert()
+    }
+    
+    // MARK: - Private
+    
     private func getPassword() -> String? {
         guard let password = passwordTextField.text,
                   !password.isEmpty else { return nil }
@@ -44,9 +50,9 @@ class LoginViewController: UIViewController {
         return password
     }
     
-    private func showAlert() {
+    private func showAlert(_ message: String = "Try later") {
         let alert = UIAlertController(title: "Error",
-                                      message: "Try later",
+                                      message: message,
                                       preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok",
                                       style: UIAlertAction.Style.default,
