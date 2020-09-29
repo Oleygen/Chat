@@ -23,16 +23,21 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func createAccountButtonAction(_ sender: Any) {
-        guard let email = emailTextField.text, !email.isEmpty else {
-            showAlert()
-            return
-        }
-        guard let password = getPassword() else {
-            showAlert()
-            return
-        }
-        loginModel.createAccount(email: email,
-                                 password: password)
+        
+        // debug
+        didCreateAccount()
+        
+        
+//        guard let email = emailTextField.text, !email.isEmpty else {
+//            showAlert()
+//            return
+//        }
+//        guard let password = getPassword() else {
+//            showAlert()
+//            return
+//        }
+//        loginModel.createAccount(email: email,
+//                                 password: password)
     }
     
     func didCreateAccount() {

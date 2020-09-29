@@ -20,11 +20,11 @@ class LoginModel {
         apiManager.createAccount(email: email,
                                  password: password) { [weak self] (user, error) in
             guard let self = self else { return }
-            guard let error = error else {
+            guard let _ = error else {
                 self.authenticationError()
                 return
             }
-            guard let user = user else {
+            guard let _ = user else {
                 self.didCreateAccount()
                 return
             }
