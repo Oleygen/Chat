@@ -19,9 +19,14 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        #warning("only for debug")
+        setAvatarPhotoButton.isEnabled = false
+        
     }
     
     func setupUser(_ user: ChatUser) {
+        _ = view
         usernameLabel.text = user.username
         passwordLabel.text = "******"
         emailLabel.text = user.email
