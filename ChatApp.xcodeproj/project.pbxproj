@@ -25,6 +25,8 @@
 		B7CFF948252429E900B6DA6D /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CFF946252429E900B6DA6D /* MessageTableViewCell.swift */; };
 		B7CFF949252429E900B6DA6D /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7CFF947252429E900B6DA6D /* MessageTableViewCell.xib */; };
 		B7CFF94D25243E8A00B6DA6D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CFF94C25243E8A00B6DA6D /* Extensions.swift */; };
+		B7CFF950252440EE00B6DA6D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CFF94E252440EE00B6DA6D /* SettingsViewController.swift */; };
+		B7CFF951252440EE00B6DA6D /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7CFF94F252440EE00B6DA6D /* SettingsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		B7CFF946252429E900B6DA6D /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		B7CFF947252429E900B6DA6D /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		B7CFF94C25243E8A00B6DA6D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B7CFF94E252440EE00B6DA6D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B7CFF94F252440EE00B6DA6D /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		E69567C65F8AB33756281F10 /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +148,8 @@
 		B7CFF94A25243B1800B6DA6D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				B7CFF94E252440EE00B6DA6D /* SettingsViewController.swift */,
+				B7CFF94F252440EE00B6DA6D /* SettingsViewController.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -229,6 +235,7 @@
 				B7CFF9362523B75B00B6DA6D /* GoogleService-Info.plist in Resources */,
 				B75E001C2523AC380054EF32 /* Assets.xcassets in Resources */,
 				B7CFF93C2523CB0F00B6DA6D /* ChatViewController.xib in Resources */,
+				B7CFF951252440EE00B6DA6D /* SettingsViewController.xib in Resources */,
 				B75E001A2523AC370054EF32 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +300,7 @@
 				B7CFF93B2523CB0F00B6DA6D /* ChatViewController.swift in Sources */,
 				B7CFF94D25243E8A00B6DA6D /* Extensions.swift in Sources */,
 				B75E00152523AC370054EF32 /* SceneDelegate.swift in Sources */,
+				B7CFF950252440EE00B6DA6D /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
