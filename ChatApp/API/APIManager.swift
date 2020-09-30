@@ -56,8 +56,10 @@ class APIManager {
     
     func send(message: String) {
         guard let userEmail = Auth.auth().currentUser?.email else { return }
-        let messageData: [String: Any] = ["userEmail": userEmail,
-                                          "message": message]
+        let timestamp = Date().timeIntervalSince1970
+        let messageData: [String: Any] = ["timestamp": timestamp,
+                                          "userEmail": userEmail,
+                                          "message": message,]
         let messageId = UUID().uuidString
         database.child(chatMessagesPath + "/" + messageId).setValue(messageData)
     }
