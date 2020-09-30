@@ -10,14 +10,14 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    var user: ChatUser?
+    private var user: ChatUser?
     
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var setAvatarPhotoButton: UIButton!
+    @IBOutlet private weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var setAvatarPhotoButton: UIButton!
     
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var passwordLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet private weak var usernameLabel: UILabel!
+    @IBOutlet private weak var passwordLabel: UILabel!
+    @IBOutlet private weak var emailLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
