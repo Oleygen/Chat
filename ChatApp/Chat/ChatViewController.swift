@@ -64,8 +64,14 @@ class ChatViewController: UIViewController {
         chatModel.signOut()
     }
     
-    func didReceive(messages: [Message]) {
-        self.messages = messages
+    func didReceive(allMessages: [Message]) {
+        self.messages = allMessages
+        chatTableView.reloadData()
+        chatTableView.scrollToBottomRow()
+    }
+    
+    func didReceive(newMessages: [Message]) {
+        self.messages.append(contentsOf: newMessages)
         chatTableView.reloadData()
         chatTableView.scrollToBottomRow()
     }

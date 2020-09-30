@@ -15,8 +15,11 @@ class ChatModel {
     weak var view: ChatViewController!
     
     init() {
-        apiManager.listener = { [weak self] messages in
-            self?.view.didReceive(messages: messages)
+        apiManager.listenerAllMessages = { [weak self] messages in
+            self?.view.didReceive(allMessages: messages)
+        }
+        apiManager.listenerNewMessages = { [weak self] messages in
+            self?.view.didReceive(newMessages: messages)
         }
         apiManager.updateAllMessages()
     }

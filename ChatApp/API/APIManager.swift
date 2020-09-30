@@ -21,17 +21,20 @@ class APIManager {
     private let database = Database.database().reference()
     private let chatMessagesPath = "/chat/messages"
     let reference: DatabaseReference
-    var listener: (([Message]) -> Void)?
+    var listenerAllMessages: (([Message]) -> Void)?
+    var listenerNewMessages: (([Message]) -> Void)?
     
     private func setupListener() {
-        reference.observe( .value, with: { [weak self] (snapshot) in
+        reference.observe(DataEventType.childAdded, with: { [weak self] (snapshot) in
             guard let self = self else { return }
-            
-            #warning("remove later")
-            guard let messagesDict = snapshot.value as? [String: String] else { return }
-            print(messagesDict)
-            
-            self.listener?(self.decodeMessages(snapshot))
+            if let _ = snapshot.value as? [String: String] {
+                self.listenerAllMessages?(self.decodeMessages(snapshot))
+            }
+            if let object = snapshot.value as? String {
+                let objectData = object.data(using: .utf8)!
+                let decodedMessage = try! JSONDecoder().decode(Message.self, from: objectData)
+                self.listenerNewMessages?([decodedMessage])
+            }
         })
     }
     
@@ -92,7 +95,7 @@ class APIManager {
     func updateAllMessages() {
         reference.observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
             guard let self = self else { return }
-            self.listener?(self.decodeMessages(snapshot))
+            self.listenerAllMessages?(self.decodeMessages(snapshot))
         })
     }
     
