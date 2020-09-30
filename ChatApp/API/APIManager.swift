@@ -14,26 +14,36 @@ class APIManager {
     
     static let shared = APIManager()
     private init() {
+        reference = database.child(chatMessagesPath)
         setupListener()
     }
     
     private let database = Database.database().reference()
     private let chatMessagesPath = "/chat/messages"
+    let reference: DatabaseReference
     var listener: (([Message]) -> Void)?
     
     private func setupListener() {
-        let ref = database.child(chatMessagesPath)
-        ref.observe( .value, with: { [weak self] (snapshot) in
+        reference.observe( .value, with: { [weak self] (snapshot) in
+            guard let self = self else { return }
+            
+            #warning("remove later")
             guard let messagesDict = snapshot.value as? [String: String] else { return }
             print(messagesDict)
-            var messages: [Message] = []
-            for (_, message) in messagesDict {
-                let decodedMessage = try! JSONDecoder().decode(Message.self, from: message.data(using: .utf8)!)
-                messages.append(decodedMessage)
-            }
-            messages.sort(by: { $0.timestamp < $1.timestamp })
-            self?.listener?(messages)
+            
+            self.listener?(self.decodeMessages(snapshot))
         })
+    }
+    
+    private func decodeMessages(_ snapshot: DataSnapshot) -> [Message] {
+        guard let messagesDict = snapshot.value as? [String: String] else { return [] }
+        var messages: [Message] = []
+        for (_, message) in messagesDict {
+            let decodedMessage = try! JSONDecoder().decode(Message.self, from: message.data(using: .utf8)!)
+            messages.append(decodedMessage)
+        }
+        messages.sort(by: { $0.timestamp < $1.timestamp })
+        return messages
     }
     
     // MARK: - Authorization
@@ -77,6 +87,10 @@ class APIManager {
         let messageJson = try! JSONEncoder().encode(message)
         let messageJsonString = String(data: messageJson, encoding: .utf8)
         database.child(chatMessagesPath).childByAutoId().setValue(messageJsonString)
+    }
+    
+    func updateAllMessages() {
+        
     }
     
 }

@@ -18,6 +18,7 @@ class ChatModel {
         apiManager.listener = { [weak self] messages in
             self?.view.didReceive(messages: messages)
         }
+        apiManager.updateAllMessages()
     }
     
     func send(message: String) {
