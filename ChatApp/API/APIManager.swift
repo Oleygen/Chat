@@ -90,7 +90,10 @@ class APIManager {
     }
     
     func updateAllMessages() {
-        
+        reference.observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
+            guard let self = self else { return }
+            self.listener?(self.decodeMessages(snapshot))
+        })
     }
     
 }
