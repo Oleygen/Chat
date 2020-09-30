@@ -12,10 +12,15 @@ class LoginViewController: UIViewController {
     
     let loginModel = LoginModel()
     
+    // Registration
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var createAccountButton: UIButton!
+    
+    // Signin
+    @IBOutlet weak var signinEmailTextField: UITextField!
+    @IBOutlet weak var signinPasswordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +40,11 @@ class LoginViewController: UIViewController {
         loginModel.createAccount(email: email,
                                  password: password)
     }
+    
+    @IBAction func signinButtonAction(_ sender: Any) {
+        
+    }
+    
     
     func didCreateAccount() {
         let chatViewController = ChatViewController()
