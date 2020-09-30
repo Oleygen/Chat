@@ -81,21 +81,17 @@ class LoginViewController: UIViewController {
         signinTabbarButton.tintColor = UIColor.white.withAlphaComponent(0.5)
     }
     
-    
-    func didCreateAccount() {
-        presentChatViewController()
-    }
-    
-    func didSignIn() {
-        presentChatViewController()
+    func successSignIn(email: String) {
+        presentChatViewController(email: email)
     }
         
     func showError() {
         showAlert()
     }
     
-    private func presentChatViewController() {
+    private func presentChatViewController(email: String) {
         let chatViewController = ChatViewController()
+        chatViewController.userEmail = email
         chatViewController.modalPresentationStyle = .fullScreen
         present(chatViewController, animated:true, completion: nil)
     }

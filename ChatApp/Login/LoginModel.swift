@@ -18,32 +18,26 @@ class LoginModel {
     func createAccount(email: String,
                        password: String) {
         apiManager.createAccount(email: email,
-                                 password: password) { [weak self] (user, error) in
+                                 password: password) { [weak self] (response, error) in
             guard let self = self else { return }
-            guard let _ = error else {
-                self.view.didCreateAccount()
-                return
-            }
-            guard let _ = user else {
+            guard let response = response, let email = response.user.email else {
                 self.authenticationError()
                 return
             }
+            self.view.successSignIn(email: email)          
         }
     }
     
     func signIn(email: String,
                 password: String) {
         apiManager.signIn(email: email,
-                          password: password) { [weak self] (user, error) in
+                          password: password) { [weak self] (response, error) in
             guard let self = self else { return }
-            guard let _ = error else {
-                self.view.didSignIn()
-                return
-            }
-            guard let _ = user else {
+            guard let response = response, let email = response.user.email else {
                 self.authenticationError()
                 return
             }
+            self.view.successSignIn(email: email)
         }
     }
     

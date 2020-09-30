@@ -12,6 +12,8 @@ class ChatViewController: UIViewController {
     
     let chatModel = ChatModel()
     
+    var userEmail: String = ""
+    
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var burgerMenuView: UIView!
     @IBOutlet weak var messageTexField: UITextField!
