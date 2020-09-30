@@ -53,11 +53,17 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzM-A0-iDd">
+                    <rect key="frame" x="49" y="185" width="67" height="30"/>
+                    <state key="normal" title="Set photo"/>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="fR9-H3-Mft" firstAttribute="leading" secondItem="xpp-vX-oPF" secondAttribute="trailing" constant="8" id="BLm-FV-Wjf"/>
+                <constraint firstItem="zzM-A0-iDd" firstAttribute="centerX" secondItem="xpp-vX-oPF" secondAttribute="centerX" id="C15-hD-hPY"/>
                 <constraint firstItem="xpp-vX-oPF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="H7g-iW-gIp"/>
+                <constraint firstItem="zzM-A0-iDd" firstAttribute="top" secondItem="xpp-vX-oPF" secondAttribute="bottom" constant="8" id="Y0g-ej-6Ts"/>
                 <constraint firstItem="fR9-H3-Mft" firstAttribute="height" secondItem="xpp-vX-oPF" secondAttribute="height" multiplier="1.024" id="i0b-Ag-O1X"/>
                 <constraint firstItem="fR9-H3-Mft" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="ljY-Um-nZa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fR9-H3-Mft" secondAttribute="trailing" constant="20" id="wj2-t3-LjD"/>
