@@ -11,7 +11,9 @@
             <connections>
                 <outlet property="burgerMenuView" destination="f0q-sl-zN5" id="b4f-6K-xva"/>
                 <outlet property="chatTableView" destination="wDi-Tr-7u5" id="IK3-dC-GNz"/>
+                <outlet property="logoutButton" destination="0bS-g3-DYG" id="fgP-2J-T4s"/>
                 <outlet property="messageTexField" destination="QeP-sF-nln" id="t7Q-oW-Nfe"/>
+                <outlet property="settingsButton" destination="ckH-8w-ob1" id="vBV-Fp-W3I"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -63,7 +65,7 @@
                             <state key="normal" title="Settings"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bS-g3-DYG">
-                            <rect key="frame" x="8" y="160" width="348" height="30"/>
+                            <rect key="frame" x="8" y="160" width="348" height="40"/>
                             <state key="normal" title="Logout"/>
                         </button>
                     </subviews>
@@ -73,7 +75,7 @@
                         <constraint firstItem="0bS-g3-DYG" firstAttribute="trailing" secondItem="ckH-8w-ob1" secondAttribute="trailing" id="Gfv-zl-kwg"/>
                         <constraint firstItem="Lak-cx-HhS" firstAttribute="top" secondItem="f0q-sl-zN5" secondAttribute="top" constant="8" id="JyN-Ny-6wN"/>
                         <constraint firstItem="ckH-8w-ob1" firstAttribute="top" secondItem="Lak-cx-HhS" secondAttribute="bottom" constant="8" id="Lwo-lP-SNe"/>
-                        <constraint firstItem="0bS-g3-DYG" firstAttribute="height" secondItem="ckH-8w-ob1" secondAttribute="height" multiplier="0.75" id="Mdh-pC-7MQ"/>
+                        <constraint firstItem="0bS-g3-DYG" firstAttribute="height" secondItem="ckH-8w-ob1" secondAttribute="height" id="Mdh-pC-7MQ"/>
                         <constraint firstItem="0bS-g3-DYG" firstAttribute="top" secondItem="ckH-8w-ob1" secondAttribute="bottom" constant="8" id="VAZ-iZ-9hM"/>
                         <constraint firstAttribute="trailing" secondItem="ckH-8w-ob1" secondAttribute="trailing" constant="8" id="a7Z-oL-slq"/>
                         <constraint firstItem="Lak-cx-HhS" firstAttribute="leading" secondItem="f0q-sl-zN5" secondAttribute="leading" constant="8" id="aS7-31-ojI"/>

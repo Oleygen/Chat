@@ -24,6 +24,7 @@
 		B7CFF9442524161700B6DA6D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CFF9432524161700B6DA6D /* Message.swift */; };
 		B7CFF948252429E900B6DA6D /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CFF946252429E900B6DA6D /* MessageTableViewCell.swift */; };
 		B7CFF949252429E900B6DA6D /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7CFF947252429E900B6DA6D /* MessageTableViewCell.xib */; };
+		B7CFF94D25243E8A00B6DA6D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CFF94C25243E8A00B6DA6D /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		B7CFF9432524161700B6DA6D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Message.swift; path = ChatApp/Chat/Message.swift; sourceTree = SOURCE_ROOT; };
 		B7CFF946252429E900B6DA6D /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		B7CFF947252429E900B6DA6D /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
+		B7CFF94C25243E8A00B6DA6D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E69567C65F8AB33756281F10 /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 				B7CFF93D2523CCCF00B6DA6D /* Chat */,
 				B7CFF94A25243B1800B6DA6D /* Settings */,
 				B7CFF9422524085B00B6DA6D /* API */,
+				B7CFF94B25243E7800B6DA6D /* Extensions */,
 				B75E001B2523AC380054EF32 /* Assets.xcassets */,
 				B75E001D2523AC380054EF32 /* LaunchScreen.storyboard */,
 				B7CFF9352523B75A00B6DA6D /* GoogleService-Info.plist */,
@@ -143,6 +146,14 @@
 			children = (
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		B7CFF94B25243E7800B6DA6D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B7CFF94C25243E8A00B6DA6D /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		EA64DCC30A72CE2202656613 /* Frameworks */ = {
@@ -280,6 +291,7 @@
 				B7CFF9382523BB8D00B6DA6D /* APIManager.swift in Sources */,
 				B75E00132523AC370054EF32 /* AppDelegate.swift in Sources */,
 				B7CFF93B2523CB0F00B6DA6D /* ChatViewController.swift in Sources */,
+				B7CFF94D25243E8A00B6DA6D /* Extensions.swift in Sources */,
 				B75E00152523AC370054EF32 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

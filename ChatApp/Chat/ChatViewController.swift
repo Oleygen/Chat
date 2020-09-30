@@ -16,6 +16,9 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var burgerMenuView: UIView!
     @IBOutlet weak var messageTexField: UITextField!
     
+    @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
+    
     var messages: [Message] = []
     
     override func viewDidLoad() {
@@ -23,6 +26,7 @@ class ChatViewController: UIViewController {
         chatModel.view = self
         setupTableView()
         setupGestures()
+        setupButtons()
     }
     
     private func setupTableView() {
@@ -84,7 +88,11 @@ class ChatViewController: UIViewController {
             burgerMenu(show: true)
         }
     }
-
+    
+    private func setupButtons() {
+        settingsButton.setBorder()
+        logoutButton.setBorder()
+    }
 }
 
 extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
