@@ -8,11 +8,14 @@
 
 import Foundation
 import Firebase
+import FirebaseDatabase
 
 class APIManager {
     
     static let shared = APIManager()
     private init() { }
+    
+    let database = Database.database().reference()
     
     func createAccount(email: String,
                        password: String,
