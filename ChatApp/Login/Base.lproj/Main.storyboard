@@ -17,8 +17,28 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Oc-dd-Wey">
                                 <rect key="frame" x="0.0" y="43" width="414" height="50"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="170" translatesAutoresizingMaskIntoConstraints="NO" id="MxP-ar-pWJ">
+                                        <rect key="frame" x="99" y="6.5" width="216.5" height="37"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Fh-vL-Ho6">
+                                                <rect key="frame" x="0.0" y="0.0" width="17.5" height="37"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="pencil" catalog="system"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xm-V1-aIW">
+                                                <rect key="frame" x="187.5" y="0.0" width="29" height="37"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="signature" catalog="system"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="MxP-ar-pWJ" firstAttribute="centerY" secondItem="6Oc-dd-Wey" secondAttribute="centerY" id="9ty-uo-9oq"/>
+                                    <constraint firstItem="MxP-ar-pWJ" firstAttribute="centerX" secondItem="6Oc-dd-Wey" secondAttribute="centerX" id="E2y-H3-hlt"/>
                                     <constraint firstAttribute="height" constant="50" id="jD7-3m-IdX"/>
                                 </constraints>
                             </view>
@@ -119,6 +139,8 @@
     </scenes>
     <resources>
         <image name="message.fill" catalog="system" width="128" height="113"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="signature" catalog="system" width="128" height="90"/>
         <image name="smiley.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>
