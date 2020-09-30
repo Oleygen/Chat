@@ -48,18 +48,37 @@
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0q-sl-zN5" userLabel="BurgerMenu">
                     <rect key="frame" x="0.0" y="44" width="364" height="818"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xX-e7-BcX">
-                            <rect key="frame" x="159" y="394" width="46" height="30"/>
-                            <state key="normal" title="Debug"/>
-                            <connections>
-                                <action selector="burgerDebugButton:" destination="-1" eventType="touchUpInside" id="RGt-JP-DvW"/>
-                            </connections>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lak-cx-HhS" userLabel="Profile">
+                            <rect key="frame" x="8" y="8" width="348" height="96"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="96" id="CJD-Bt-c20"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckH-8w-ob1">
+                            <rect key="frame" x="8" y="112" width="348" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="LF2-kF-DzT"/>
+                            </constraints>
+                            <state key="normal" title="Settings"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bS-g3-DYG">
+                            <rect key="frame" x="8" y="160" width="348" height="30"/>
+                            <state key="normal" title="Logout"/>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.20726742724804181" green="0.49110629856788091" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
-                        <constraint firstItem="3xX-e7-BcX" firstAttribute="centerX" secondItem="f0q-sl-zN5" secondAttribute="centerX" id="Mdi-X1-SBT"/>
-                        <constraint firstItem="3xX-e7-BcX" firstAttribute="centerY" secondItem="f0q-sl-zN5" secondAttribute="centerY" id="s6u-V5-QrK"/>
+                        <constraint firstItem="ckH-8w-ob1" firstAttribute="leading" secondItem="f0q-sl-zN5" secondAttribute="leading" constant="8" id="1sJ-uY-8WL"/>
+                        <constraint firstItem="0bS-g3-DYG" firstAttribute="trailing" secondItem="ckH-8w-ob1" secondAttribute="trailing" id="Gfv-zl-kwg"/>
+                        <constraint firstItem="Lak-cx-HhS" firstAttribute="top" secondItem="f0q-sl-zN5" secondAttribute="top" constant="8" id="JyN-Ny-6wN"/>
+                        <constraint firstItem="ckH-8w-ob1" firstAttribute="top" secondItem="Lak-cx-HhS" secondAttribute="bottom" constant="8" id="Lwo-lP-SNe"/>
+                        <constraint firstItem="0bS-g3-DYG" firstAttribute="height" secondItem="ckH-8w-ob1" secondAttribute="height" multiplier="0.75" id="Mdh-pC-7MQ"/>
+                        <constraint firstItem="0bS-g3-DYG" firstAttribute="top" secondItem="ckH-8w-ob1" secondAttribute="bottom" constant="8" id="VAZ-iZ-9hM"/>
+                        <constraint firstAttribute="trailing" secondItem="ckH-8w-ob1" secondAttribute="trailing" constant="8" id="a7Z-oL-slq"/>
+                        <constraint firstItem="Lak-cx-HhS" firstAttribute="leading" secondItem="f0q-sl-zN5" secondAttribute="leading" constant="8" id="aS7-31-ojI"/>
+                        <constraint firstAttribute="trailing" secondItem="Lak-cx-HhS" secondAttribute="trailing" constant="8" id="hQ6-vc-THg"/>
+                        <constraint firstItem="0bS-g3-DYG" firstAttribute="leading" secondItem="ckH-8w-ob1" secondAttribute="leading" id="urW-Qe-fpX"/>
                     </constraints>
                 </view>
             </subviews>

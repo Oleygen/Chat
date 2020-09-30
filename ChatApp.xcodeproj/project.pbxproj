@@ -95,8 +95,9 @@
 				B75E00122523AC370054EF32 /* AppDelegate.swift */,
 				B75E00142523AC370054EF32 /* SceneDelegate.swift */,
 				B7CFF93E2523DAFC00B6DA6D /* Todo.swift */,
-				B7CFF93D2523CCCF00B6DA6D /* Chat */,
 				B7CFF9322523AE6500B6DA6D /* Login */,
+				B7CFF93D2523CCCF00B6DA6D /* Chat */,
+				B7CFF94A25243B1800B6DA6D /* Settings */,
 				B7CFF9422524085B00B6DA6D /* API */,
 				B75E001B2523AC380054EF32 /* Assets.xcassets */,
 				B75E001D2523AC380054EF32 /* LaunchScreen.storyboard */,
@@ -135,6 +136,13 @@
 				B7CFF9432524161700B6DA6D /* Message.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		B7CFF94A25243B1800B6DA6D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		EA64DCC30A72CE2202656613 /* Frameworks */ = {
