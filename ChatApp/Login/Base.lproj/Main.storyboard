@@ -26,11 +26,17 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="pencil" catalog="system"/>
+                                                <connections>
+                                                    <action selector="createAccountScreenButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HpW-gE-2sB"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xm-V1-aIW">
                                                 <rect key="frame" x="187.5" y="0.0" width="29" height="37"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="signature" catalog="system"/>
+                                                <connections>
+                                                    <action selector="signinScreenButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5ku-ep-gvc"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -172,8 +178,10 @@
                         <outlet property="createAccountButton" destination="vwA-gn-GyW" id="n62-Q6-yCY"/>
                         <outlet property="emailTextField" destination="KNq-LW-N0R" id="Nmb-ZE-bOm"/>
                         <outlet property="passwordTextField" destination="xC1-Ze-wjy" id="dez-bP-RbX"/>
+                        <outlet property="signinButton" destination="jnq-Hp-bek" id="14e-Ow-vfo"/>
                         <outlet property="signinEmailTextField" destination="slf-iQ-cmZ" id="B61-gZ-Xya"/>
                         <outlet property="signinPasswordTextField" destination="AzX-Yb-ycl" id="IIK-uC-Wcv"/>
+                        <outlet property="signinTextFieldsView" destination="rCE-eg-Jy2" id="1mb-j1-Ph2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

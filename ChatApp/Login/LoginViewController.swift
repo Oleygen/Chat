@@ -21,11 +21,14 @@ class LoginViewController: UIViewController {
     // Signin
     @IBOutlet weak var signinEmailTextField: UITextField!
     @IBOutlet weak var signinPasswordTextField: UITextField!
+    @IBOutlet weak var signinTextFieldsView: UIView!
+    @IBOutlet weak var signinButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loginModel.view = self
         createAccountButton.setBorder()
+        signinButton.setBorder()
     }
     
     @IBAction func createAccountButtonAction(_ sender: Any) {
@@ -43,6 +46,14 @@ class LoginViewController: UIViewController {
     
     @IBAction func signinButtonAction(_ sender: Any) {
         
+    }
+    
+    @IBAction func createAccountScreenButtonAction(_ sender: Any) {
+        signinTextFieldsView.isHidden = true
+    }
+    
+    @IBAction func signinScreenButtonAction(_ sender: Any) {
+        signinTextFieldsView.isHidden = false
     }
     
     
