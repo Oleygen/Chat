@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="ChatApp" customModuleProvider="target">
             <connections>
+                <outlet property="avatarImageView" destination="xpp-vX-oPF" id="Yo5-mu-u8F"/>
                 <outlet property="emailLabel" destination="Bvd-Ud-S4e" id="NA7-WX-bfe"/>
                 <outlet property="passwordLabel" destination="Z3S-B0-6BS" id="yAa-wc-16q"/>
                 <outlet property="setAvatarPhotoButton" destination="zzM-A0-iDd" id="3fO-nT-fmU"/>
@@ -64,6 +65,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzM-A0-iDd">
                     <rect key="frame" x="49" y="185" width="67" height="30"/>
                     <state key="normal" title="Set photo"/>
+                    <connections>
+                        <action selector="setAvatarButtonAction:" destination="-1" eventType="touchUpInside" id="sTe-z7-FNE"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
