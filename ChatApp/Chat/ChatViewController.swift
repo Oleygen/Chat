@@ -54,7 +54,11 @@ class ChatViewController: UIViewController {
         messageTexField.text = nil
     }
     
-    @IBAction func burgerDebugButton(_ sender: Any) {
+    @IBAction func settingsButtonAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func logoutButtonAction(_ sender: Any) {
         chatModel.signOut()
     }
     

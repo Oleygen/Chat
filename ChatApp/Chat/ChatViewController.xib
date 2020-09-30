@@ -43,7 +43,7 @@
                     </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QeP-sF-nln">
-                    <rect key="frame" x="26" y="820" width="318" height="34"/>
+                    <rect key="frame" x="8" y="820" width="336" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -63,10 +63,16 @@
                                 <constraint firstAttribute="height" constant="40" id="LF2-kF-DzT"/>
                             </constraints>
                             <state key="normal" title="Settings"/>
+                            <connections>
+                                <action selector="settingsButtonAction:" destination="-1" eventType="touchUpInside" id="a2R-o9-dtM"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bS-g3-DYG">
                             <rect key="frame" x="8" y="160" width="348" height="40"/>
                             <state key="normal" title="Logout"/>
+                            <connections>
+                                <action selector="logoutButtonAction:" destination="-1" eventType="touchUpInside" id="7fo-By-QZz"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.80711618039102051" green="0.8591614138646847" blue="0.96620899438858032" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -90,7 +96,7 @@
                 <constraint firstItem="oPu-rF-27Z" firstAttribute="leading" secondItem="QeP-sF-nln" secondAttribute="trailing" constant="20" id="CzX-sK-OII"/>
                 <constraint firstItem="oPu-rF-27Z" firstAttribute="centerY" secondItem="QeP-sF-nln" secondAttribute="centerY" id="Dv4-Zx-L8z"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oPu-rF-27Z" secondAttribute="trailing" constant="20" id="M1C-Gn-Mvk"/>
-                <constraint firstItem="QeP-sF-nln" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="26" id="MKL-58-Kfk"/>
+                <constraint firstItem="QeP-sF-nln" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="MKL-58-Kfk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="f0q-sl-zN5" secondAttribute="trailing" constant="50" id="NSG-8v-XwG"/>
                 <constraint firstItem="wDi-Tr-7u5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TEn-63-uzM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="f0q-sl-zN5" secondAttribute="bottom" id="UcZ-sQ-i9A"/>
