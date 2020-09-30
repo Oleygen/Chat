@@ -10,9 +10,9 @@ import UIKit
 
 class ChatViewController: UIViewController {
     
-    let chatModel = ChatModel()
+    lazy var chatModel = ChatModel(view: self)
     
-    var userEmail: String = ""
+    private var userEmail: String = ""
     
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var burgerMenuView: UIView!
@@ -25,7 +25,7 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        chatModel.view = self
+        _ = chatModel
         setupTableView()
         setupGestures()
         setupButtons()
@@ -76,6 +76,10 @@ class ChatViewController: UIViewController {
         chatTableView.scrollToBottomRow()
     }
     
+    func setupLoggedEmail(_ email: String) {
+        userEmail = email
+    }
+    
     private func burgerMenu(show: Bool) {
         let transition = CATransition()
         transition.duration = 0.25
@@ -118,7 +122,8 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessageTableViewCell") as! MessageTableViewCell
-        cell.configureCell(isMy: false, messages[indexPath.row])
+        cell.configureCell(isMy: messages[indexPath.row].userEmail == userEmail,
+                           messages[indexPath.row])
         return cell
     }
     

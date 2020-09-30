@@ -25,15 +25,18 @@ class APIManager {
     var listenerNewMessages: (([Message]) -> Void)?
     
     private func setupListener() {
-        reference.observe(DataEventType.childAdded, with: { [weak self] (snapshot) in
+        reference.observe(.childAdded, with: { [weak self] (snapshot) in
             guard let self = self else { return }
-            if let _ = snapshot.value as? [String: String] {
-                self.listenerAllMessages?(self.decodeMessages(snapshot))
-            }
             if let object = snapshot.value as? String {
                 let objectData = object.data(using: .utf8)!
                 let decodedMessage = try! JSONDecoder().decode(Message.self, from: objectData)
                 self.listenerNewMessages?([decodedMessage])
+            }
+        })
+        reference.observe(.value, with: { [weak self] (snapshot) in
+            guard let self = self else { return }
+            if let _ = snapshot.value as? [String: String] {
+                self.listenerAllMessages?(self.decodeMessages(snapshot))
             }
         })
     }
@@ -97,6 +100,10 @@ class APIManager {
             guard let self = self else { return }
             self.listenerAllMessages?(self.decodeMessages(snapshot))
         })
+    }
+    
+    func getLoggedEmail() -> String {
+        return Firebase.Auth.auth().currentUser!.email!
     }
     
 }
