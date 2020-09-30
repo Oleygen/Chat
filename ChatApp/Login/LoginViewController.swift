@@ -91,7 +91,7 @@ class LoginViewController: UIViewController {
     
     private func presentChatViewController(email: String) {
         let chatViewController = ChatViewController()
-        chatViewController.modalPresentationStyle = .fullScreen
+        chatViewController.modalPresentationStyle = .overCurrentContext
         present(chatViewController, animated:true, completion: nil)
     }
     

@@ -58,7 +58,9 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func settingsButtonAction(_ sender: Any) {
-        
+        let settingsViewController = SettingsViewController()
+        settingsViewController.modalPresentationStyle = .popover
+        present(settingsViewController, animated:true, completion: nil)
     }
     
     @IBAction func logoutButtonAction(_ sender: Any) {
