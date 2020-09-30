@@ -26,6 +26,8 @@ class MessageTableViewCell: UITableViewCell {
         } else {
             leftInsetConstraint.constant = inset
         }
+        messageText.layer.cornerRadius = 8
+        messageText.clipsToBounds = true
         messageText.text = "asdaldfnaldfnlsnvlasdadfafadfadfsjfnvljdfnvkdjnvdkjfnkvdjnfkv"
     }
 
