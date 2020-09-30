@@ -31,6 +31,7 @@ class APIManager {
                 let decodedMessage = try! JSONDecoder().decode(Message.self, from: message.data(using: .utf8)!)
                 messages.append(decodedMessage)
             }
+            messages.sort(by: { $0.timestamp < $1.timestamp })
             self?.listener?(messages)
         })
     }

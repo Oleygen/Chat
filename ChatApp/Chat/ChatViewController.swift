@@ -52,7 +52,7 @@ class ChatViewController: UIViewController {
     }
     
     func didReceive(messages: [Message]) {
-        self.messages.append(contentsOf: messages)
+        self.messages = messages
         chatTableView.reloadData()
     }
     
