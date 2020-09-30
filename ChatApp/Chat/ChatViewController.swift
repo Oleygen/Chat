@@ -10,14 +10,15 @@ import UIKit
 
 class ChatViewController: UIViewController {
     
+    let chatModel = ChatModel()
+    
     @IBOutlet weak var chatTableView: UITableView!
-    
     @IBOutlet weak var burgerMenuView: UIView!
+    @IBOutlet weak var messageTexField: UITextField!
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        chatModel.view = self
         setupTableView()
         setupGestures()
     }
@@ -39,7 +40,9 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func sendButtonAction(_ sender: Any) {
-        
+        guard let message = messageTexField.text, !message.isEmpty else { return }
+        chatModel.send(message: message)
+        messageTexField.text = nil
     }
     
     @IBAction func burgerDebugButton(_ sender: Any) {

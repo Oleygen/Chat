@@ -17,6 +17,9 @@ class APIManager {
     
     let database = Database.database().reference()
     
+    
+    // MARK: - Authorization
+    
     func createAccount(email: String,
                        password: String,
                        completion: @escaping (AuthDataResult?, Error?) -> Void) {
@@ -29,7 +32,6 @@ class APIManager {
         }
     }
     
-    
     func signOut() {
         do {
             try Firebase.Auth.auth().signOut()
@@ -37,4 +39,16 @@ class APIManager {
             print ("Error signing out: %@", signOutError)
         }
     }
+    
+    
+    // MARK: - Chat
+    
+    func send(message: String) {
+        guard let userEmail = Auth.auth().currentUser?.email else { return }
+        let messageData: [String: Any] = ["userEmail": userEmail,
+                                          "message": message]
+        database.child("/chat").setValue(messageData)
+    }
+    
+    
 }
