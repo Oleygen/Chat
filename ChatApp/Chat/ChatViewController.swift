@@ -65,11 +65,16 @@ class ChatViewController: UIViewController {
         let settingsViewController = SettingsViewController()
         settingsViewController.setupUser(chatUser)
         settingsViewController.modalPresentationStyle = .popover
-        present(settingsViewController, animated:true, completion: nil)
+        present(settingsViewController, animated: true, completion: nil)
     }
     
     @IBAction func logoutButtonAction(_ sender: Any) {
         chatModel.signOut()
+//        let loginViewController = LoginViewController()
+//        loginViewController.modalPresentationStyle = .popover
+//        present(loginViewController, animated: true) {
+//            self.dismiss(animated: false, completion: nil)
+//        }
     }
     
     func didReceive(allMessages: [Message]) {
