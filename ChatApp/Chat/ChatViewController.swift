@@ -10,22 +10,22 @@ import UIKit
 
 class ChatViewController: UIViewController {
     
-    lazy var chatModel = ChatModel(view: self)
+    private lazy var chatModel = ChatModel(view: self)
     
     private var chatUser: ChatUser!
     
-    @IBOutlet weak var chatTableView: UITableView!
-    @IBOutlet weak var burgerMenuView: UIView!
-    @IBOutlet weak var messageTexField: UITextField!
+    @IBOutlet private weak var chatTableView: UITableView!
+    @IBOutlet private weak var burgerMenuView: UIView!
+    @IBOutlet private weak var messageTexField: UITextField!
     
-    @IBOutlet weak var settingsButton: UIButton!
-    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet private weak var settingsButton: UIButton!
+    @IBOutlet private weak var logoutButton: UIButton!
     
-    @IBOutlet weak var profileUsernameLabel: UILabel!
-    @IBOutlet weak var profileEmailLabel: UILabel!
-    @IBOutlet weak var profileUsernameAvatarImage: UIImageView!
+    @IBOutlet private weak var profileUsernameLabel: UILabel!
+    @IBOutlet private weak var profileEmailLabel: UILabel!
+    @IBOutlet private weak var profileUsernameAvatarImage: UIImageView!
     
-    var messages: [Message] = []
+    private var messages: [Message] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
