@@ -39,7 +39,7 @@ class MessageTableViewCell: UITableViewCell {
             usernameLabel.textAlignment = .left
             rightInsetCostraint.constant = inset
             messageText.backgroundColor = UIColor.systemBlue
-            usernameLabel.text = message.userEmail
+            usernameLabel.text = message.username
         }
         messageText.layer.cornerRadius = 8
         messageText.clipsToBounds = true

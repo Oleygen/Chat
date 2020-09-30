@@ -10,10 +10,10 @@ import Foundation
 import FirebaseAuth
 
 struct ChatUser {
-    let username: String? = nil
+    var username: String
     let email: String
-    
     init(_ user: User) {
+        self.username = "User №" + user.uid.prefix(3)
         self.email = user.email!
     }
 }

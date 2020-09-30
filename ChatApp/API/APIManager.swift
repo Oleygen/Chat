@@ -87,9 +87,10 @@ class APIManager {
     func send(message: String) {
         guard let userEmail = Auth.auth().currentUser?.email else { return }
         let timestamp = String(Date().timeIntervalSince1970)
-        let message = Message(timestamp: timestamp,
-                                userEmail: userEmail,
-                                message: message)
+        let message = Message(username: getUser().username,
+                              timestamp: timestamp,
+                              userEmail: userEmail,
+                              message: message)
         let messageJson = try! JSONEncoder().encode(message)
         let messageJsonString = String(data: messageJson, encoding: .utf8)
         database.child(chatMessagesPath).childByAutoId().setValue(messageJsonString)
