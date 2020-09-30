@@ -17,12 +17,52 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="smiley" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xpp-vX-oPF">
-                    <rect key="frame" x="20" y="44" width="126" height="127"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smiley" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xpp-vX-oPF">
+                    <rect key="frame" x="20" y="52.5" width="125" height="124"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="125" id="4Vv-ax-NK9"/>
+                        <constraint firstAttribute="width" constant="125" id="h0I-5z-FEI"/>
+                    </constraints>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fR9-H3-Mft">
+                    <rect key="frame" x="153" y="52" width="241" height="128"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="1qG-DD-cQD">
+                            <rect key="frame" x="8" y="8" width="78.5" height="111.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZH-fH-A4A">
+                                    <rect key="frame" x="0.0" y="0.0" width="78.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3S-B0-6BS">
+                                    <rect key="frame" x="0.0" y="45.5" width="74" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvd-Ud-S4e">
+                                    <rect key="frame" x="0.0" y="91" width="41" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="fR9-H3-Mft" firstAttribute="leading" secondItem="xpp-vX-oPF" secondAttribute="trailing" constant="8" id="BLm-FV-Wjf"/>
+                <constraint firstItem="xpp-vX-oPF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="H7g-iW-gIp"/>
+                <constraint firstItem="fR9-H3-Mft" firstAttribute="height" secondItem="xpp-vX-oPF" secondAttribute="height" multiplier="1.024" id="i0b-Ag-O1X"/>
+                <constraint firstItem="fR9-H3-Mft" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="ljY-Um-nZa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fR9-H3-Mft" secondAttribute="trailing" constant="20" id="wj2-t3-LjD"/>
+                <constraint firstItem="xpp-vX-oPF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="ySs-Xg-497"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="-123.18840579710145" y="66.964285714285708"/>
         </view>
