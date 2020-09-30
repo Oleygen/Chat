@@ -14,6 +14,12 @@ class ChatModel {
     
     weak var view: ChatViewController!
     
+    init() {
+        apiManager.listener = { [weak self] messages in
+            self?.view.didReceive(messages: messages)
+        }
+    }
+    
     func send(message: String) {
         apiManager.send(message: message)
     }

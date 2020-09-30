@@ -19,13 +19,19 @@ class APIManager {
     
     private let database = Database.database().reference()
     private let chatMessagesPath = "/chat/messages"
+    var listener: (([Message]) -> Void)?
     
     private func setupListener() {
         let ref = database.child(chatMessagesPath)
-        ref.observe( .value, with: { (snapshot) in
-             if let messages = snapshot.value as? [String: Any] {
-                  print(messages)
-             }
+        ref.observe( .value, with: { [weak self] (snapshot) in
+            guard let messagesDict = snapshot.value as? [String: String] else { return }
+            print(messagesDict)
+            var messages: [Message] = []
+            for (keyId, message) in messagesDict {
+                let decodedMessage = try! JSONDecoder().decode(Message.self, from: message.data(using: .utf8)!)
+                messages.append(decodedMessage)
+            }
+            self?.listener?(messages)
         })
     }
     
@@ -54,12 +60,13 @@ class APIManager {
     
     func send(message: String) {
         guard let userEmail = Auth.auth().currentUser?.email else { return }
-        let timestamp = Date().timeIntervalSince1970
-        let messageData: [String: Any] = ["timestamp": timestamp,
-                                          "userEmail": userEmail,
-                                          "message": message,]
-        let messageId = UUID().uuidString
-        database.child(chatMessagesPath + "/" + messageId).setValue(messageData)
+        let timestamp = String(Date().timeIntervalSince1970)
+        let message = Message(timestamp: timestamp,
+                                userEmail: userEmail,
+                                message: message)
+        let messageJson = try! JSONEncoder().encode(message)
+        let messageJsonString = String(data: messageJson, encoding: .utf8)
+        database.child(chatMessagesPath).childByAutoId().setValue(messageJsonString)
     }
     
 }
