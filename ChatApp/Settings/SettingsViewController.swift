@@ -11,12 +11,20 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     var user: ChatUser?
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var setAvatarPhotoButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     func setupUser(_ user: ChatUser) {
+        usernameLabel.text = user.username
+        passwordLabel.text = "******"
+        emailLabel.text = user.email
         self.user = user
     }
 

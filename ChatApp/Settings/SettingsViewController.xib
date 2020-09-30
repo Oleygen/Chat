@@ -9,6 +9,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="ChatApp" customModuleProvider="target">
             <connections>
+                <outlet property="emailLabel" destination="Bvd-Ud-S4e" id="NA7-WX-bfe"/>
+                <outlet property="passwordLabel" destination="Z3S-B0-6BS" id="yAa-wc-16q"/>
+                <outlet property="setAvatarPhotoButton" destination="zzM-A0-iDd" id="3fO-nT-fmU"/>
+                <outlet property="usernameLabel" destination="KZH-fH-A4A" id="ryo-zO-5Bz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,22 +31,22 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fR9-H3-Mft">
                     <rect key="frame" x="153" y="52" width="241" height="128"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="1qG-DD-cQD">
-                            <rect key="frame" x="8" y="8" width="78.5" height="111.5"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="1qG-DD-cQD">
+                            <rect key="frame" x="8" y="7" width="225" height="111.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZH-fH-A4A">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZH-fH-A4A">
                                     <rect key="frame" x="0.0" y="0.0" width="78.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3S-B0-6BS">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3S-B0-6BS">
                                     <rect key="frame" x="0.0" y="45.5" width="74" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvd-Ud-S4e">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvd-Ud-S4e">
                                     <rect key="frame" x="0.0" y="91" width="41" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
@@ -52,6 +56,10 @@
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="1qG-DD-cQD" firstAttribute="leading" secondItem="fR9-H3-Mft" secondAttribute="leading" constant="8" id="Gwf-xs-EU2"/>
+                        <constraint firstAttribute="trailing" secondItem="1qG-DD-cQD" secondAttribute="trailing" constant="8" id="l22-Pz-1mU"/>
+                    </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzM-A0-iDd">
                     <rect key="frame" x="49" y="185" width="67" height="30"/>
@@ -63,8 +71,10 @@
                 <constraint firstItem="fR9-H3-Mft" firstAttribute="leading" secondItem="xpp-vX-oPF" secondAttribute="trailing" constant="8" id="BLm-FV-Wjf"/>
                 <constraint firstItem="zzM-A0-iDd" firstAttribute="centerX" secondItem="xpp-vX-oPF" secondAttribute="centerX" id="C15-hD-hPY"/>
                 <constraint firstItem="xpp-vX-oPF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="H7g-iW-gIp"/>
+                <constraint firstItem="1qG-DD-cQD" firstAttribute="height" secondItem="xpp-vX-oPF" secondAttribute="height" multiplier="0.892" id="W9M-JB-XZd"/>
                 <constraint firstItem="zzM-A0-iDd" firstAttribute="top" secondItem="xpp-vX-oPF" secondAttribute="bottom" constant="8" id="Y0g-ej-6Ts"/>
                 <constraint firstItem="fR9-H3-Mft" firstAttribute="height" secondItem="xpp-vX-oPF" secondAttribute="height" multiplier="1.024" id="i0b-Ag-O1X"/>
+                <constraint firstItem="1qG-DD-cQD" firstAttribute="centerY" secondItem="xpp-vX-oPF" secondAttribute="centerY" id="lKm-Ev-nLc"/>
                 <constraint firstItem="fR9-H3-Mft" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="ljY-Um-nZa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fR9-H3-Mft" secondAttribute="trailing" constant="20" id="wj2-t3-LjD"/>
                 <constraint firstItem="xpp-vX-oPF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="ySs-Xg-497"/>
