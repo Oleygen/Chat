@@ -18,8 +18,8 @@ class ChatModel {
         apiManager.send(message: message)
     }
     
-    
-    
-    
+    func signOut() {
+        apiManager.signOut()
+    }
     
 }

@@ -37,8 +37,6 @@ class APIManager {
         Auth.auth().createUser(withEmail: email,
                                password: password)
                                { (user: AuthDataResult?, error: Error?) in
-            print("user \(String(describing: user))")
-            print("error \(String(describing: error))")
             completion(user, error)
         }
     }
