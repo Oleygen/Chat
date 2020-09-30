@@ -12,7 +12,7 @@ class ChatViewController: UIViewController {
     
     lazy var chatModel = ChatModel(view: self)
     
-    private var userEmail: String = ""
+    private var chatUser: ChatUser!
     
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var burgerMenuView: UIView!
@@ -79,8 +79,8 @@ class ChatViewController: UIViewController {
         chatTableView.scrollToBottomRow()
     }
     
-    func setupLoggedEmail(_ email: String) {
-        userEmail = email
+    func setupLoggedEmail(_ user: ChatUser) {
+        chatUser = user
     }
     
     private func burgerMenu(show: Bool) {
@@ -125,7 +125,7 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessageTableViewCell") as! MessageTableViewCell
-        cell.configureCell(isMy: messages[indexPath.row].userEmail == userEmail,
+        cell.configureCell(isMy: messages[indexPath.row].userEmail == chatUser.email,
                            messages[indexPath.row])
         return cell
     }
