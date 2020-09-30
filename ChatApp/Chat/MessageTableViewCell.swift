@@ -19,14 +19,22 @@ class MessageTableViewCell: UITableViewCell {
         
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        leftInsetConstraint.constant = 8
+        rightInsetCostraint.constant = 8
+    }
+    
     func configureCell(isMy: Bool, _ message: Message) {
         selectionStyle = UITableViewCell.SelectionStyle.none
         isUserInteractionEnabled = false
         let inset: CGFloat = 70
         if isMy {
             leftInsetConstraint.constant = inset
+            messageText.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.7)
         } else {
             rightInsetCostraint.constant = inset
+            messageText.backgroundColor = UIColor.systemBlue
         }
         messageText.layer.cornerRadius = 8
         messageText.clipsToBounds = true
