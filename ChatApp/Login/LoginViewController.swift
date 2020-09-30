@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
         loginModel.view = self
         createAccountButton.setBorder()
         signinButton.setBorder()
+        signinTextFieldsView.isHidden = true
     }
     
     @IBAction func createAccountButtonAction(_ sender: Any) {
