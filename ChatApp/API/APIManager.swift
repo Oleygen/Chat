@@ -48,6 +48,12 @@ class APIManager {
         }
     }
     
+    func signIn(email: String,
+                password: String,
+                completion: @escaping (AuthDataResult?, Error?) -> Void) {
+        
+    }
+    
     func signOut() {
         do {
             try Firebase.Auth.auth().signOut()

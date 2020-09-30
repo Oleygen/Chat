@@ -31,6 +31,14 @@ class LoginModel {
         }
     }
     
+    func signIn(email: String,
+                password: String) {
+        apiManager.signIn(email: email,
+                          password: password) { [weak self] (user, error) in
+                            
+        }
+    }
+    
     private func didCreateAccount() {
         view.didCreateAccount()
     }

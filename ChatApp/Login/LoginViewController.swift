@@ -50,7 +50,15 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signinButtonAction(_ sender: Any) {
-        
+        guard let email = signinEmailTextField.text, !email.isEmpty else {
+            showAlert()
+            return
+        }
+        guard let password = signinPasswordTextField.text, !password.isEmpty else {
+            showAlert()
+            return
+        }
+        loginModel.signIn(email: email, password: password)
     }
     
     @IBAction func createAccountScreenButtonAction(_ sender: Any) {
