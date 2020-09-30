@@ -21,6 +21,10 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     
+    @IBOutlet weak var profileUsernameLabel: UILabel!
+    @IBOutlet weak var profileEmailLabel: UILabel!
+    @IBOutlet weak var profileUsernameAvatarImage: UIImageView!
+    
     var messages: [Message] = []
     
     override func viewDidLoad() {
