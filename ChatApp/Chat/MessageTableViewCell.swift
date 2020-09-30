@@ -22,9 +22,9 @@ class MessageTableViewCell: UITableViewCell {
     func configureCell(isMy: Bool, _ message: Message) {
         let inset: CGFloat = 70
         if isMy {
-            rightInsetCostraint.constant = inset
-        } else {
             leftInsetConstraint.constant = inset
+        } else {
+            rightInsetCostraint.constant = inset
         }
         messageText.layer.cornerRadius = 8
         messageText.clipsToBounds = true
