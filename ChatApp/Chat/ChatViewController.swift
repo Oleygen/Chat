@@ -61,6 +61,7 @@ class ChatViewController: UIViewController {
     func didReceive(messages: [Message]) {
         self.messages = messages
         chatTableView.reloadData()
+        chatTableView.scrollToBottomRow()
     }
     
     private func burgerMenu(show: Bool) {
