@@ -34,4 +34,8 @@ class ChatModel {
         apiManager.signOut()
     }
     
+    func getUser() -> ChatUser {
+        return apiManager.getUser()
+    }
+    
 }

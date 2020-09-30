@@ -106,4 +106,8 @@ class APIManager {
         return Firebase.Auth.auth().currentUser!.email!
     }
     
+    func getUser() -> ChatUser {
+        return ChatUser(Firebase.Auth.auth().currentUser!)
+    }
+    
 }

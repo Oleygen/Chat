@@ -26,6 +26,7 @@
 		B7CFF94D25243E8A00B6DA6D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CFF94C25243E8A00B6DA6D /* Extensions.swift */; };
 		B7CFF950252440EE00B6DA6D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CFF94E252440EE00B6DA6D /* SettingsViewController.swift */; };
 		B7CFF951252440EE00B6DA6D /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7CFF94F252440EE00B6DA6D /* SettingsViewController.xib */; };
+		B7CFF95325247AFA00B6DA6D /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CFF95225247AFA00B6DA6D /* ChatUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		B7CFF94C25243E8A00B6DA6D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B7CFF94E252440EE00B6DA6D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B7CFF94F252440EE00B6DA6D /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		B7CFF95225247AFA00B6DA6D /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
 		E69567C65F8AB33756281F10 /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 			children = (
 				B7CFF9372523BB8D00B6DA6D /* APIManager.swift */,
 				B7CFF9432524161700B6DA6D /* Message.swift */,
+				B7CFF95225247AFA00B6DA6D /* ChatUser.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7CFF95325247AFA00B6DA6D /* ChatUser.swift in Sources */,
 				B75E00172523AC370054EF32 /* LoginViewController.swift in Sources */,
 				B7CFF9342523AE9300B6DA6D /* LoginModel.swift in Sources */,
 				B7CFF948252429E900B6DA6D /* MessageTableViewCell.swift in Sources */,
