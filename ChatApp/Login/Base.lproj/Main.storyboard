@@ -176,11 +176,13 @@
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="MOJ-0V-AWb" id="1XZ-G4-n9n"/>
                         <outlet property="createAccountButton" destination="vwA-gn-GyW" id="n62-Q6-yCY"/>
+                        <outlet property="createAccountTabbarButton" destination="0Fh-vL-Ho6" id="Lex-pu-bCh"/>
                         <outlet property="emailTextField" destination="KNq-LW-N0R" id="Nmb-ZE-bOm"/>
                         <outlet property="passwordTextField" destination="xC1-Ze-wjy" id="dez-bP-RbX"/>
                         <outlet property="signinButton" destination="jnq-Hp-bek" id="14e-Ow-vfo"/>
                         <outlet property="signinEmailTextField" destination="slf-iQ-cmZ" id="B61-gZ-Xya"/>
                         <outlet property="signinPasswordTextField" destination="AzX-Yb-ycl" id="IIK-uC-Wcv"/>
+                        <outlet property="signinTabbarButton" destination="1xm-V1-aIW" id="HPk-Zm-HLi"/>
                         <outlet property="signinTextFieldsView" destination="rCE-eg-Jy2" id="1mb-j1-Ph2"/>
                     </connections>
                 </viewController>

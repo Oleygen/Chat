@@ -18,6 +18,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var createAccountButton: UIButton!
     
+    @IBOutlet weak var createAccountTabbarButton: UIButton!
+    @IBOutlet weak var signinTabbarButton: UIButton!
+    
     // Signin
     @IBOutlet weak var signinEmailTextField: UITextField!
     @IBOutlet weak var signinPasswordTextField: UITextField!
@@ -30,6 +33,7 @@ class LoginViewController: UIViewController {
         createAccountButton.setBorder()
         signinButton.setBorder()
         signinTextFieldsView.isHidden = true
+        disableSigninTabbarButton()
     }
     
     @IBAction func createAccountButtonAction(_ sender: Any) {
@@ -51,10 +55,22 @@ class LoginViewController: UIViewController {
     
     @IBAction func createAccountScreenButtonAction(_ sender: Any) {
         signinTextFieldsView.isHidden = true
+        disableSigninTabbarButton()
     }
     
     @IBAction func signinScreenButtonAction(_ sender: Any) {
         signinTextFieldsView.isHidden = false
+        disableCreateAccountTabbarButton()
+    }
+    
+    private func disableCreateAccountTabbarButton() {
+        createAccountTabbarButton.tintColor = UIColor.white.withAlphaComponent(0.5)
+        signinTabbarButton.tintColor = .white
+    }
+    
+    private func disableSigninTabbarButton() {
+        createAccountTabbarButton.tintColor = .white
+        signinTabbarButton.tintColor = UIColor.white.withAlphaComponent(0.5)
     }
     
     
