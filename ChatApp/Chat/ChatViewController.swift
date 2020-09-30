@@ -63,6 +63,7 @@ class ChatViewController: UIViewController {
     
     @IBAction func settingsButtonAction(_ sender: Any) {
         let settingsViewController = SettingsViewController()
+        settingsViewController.setupUser(chatUser)
         settingsViewController.modalPresentationStyle = .popover
         present(settingsViewController, animated:true, completion: nil)
     }
@@ -106,7 +107,7 @@ class ChatViewController: UIViewController {
         }
     }
     
-    @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
+    @objc func handleSwipes(_ sender: UISwipeGestureRecognizer) {
         if (sender.direction == .left) {
             burgerMenu(show: false)
         }

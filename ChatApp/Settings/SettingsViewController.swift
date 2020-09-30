@@ -10,9 +10,14 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    var user: ChatUser?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
+    func setupUser(_ user: ChatUser) {
+        self.user = user
+    }
 
 }
