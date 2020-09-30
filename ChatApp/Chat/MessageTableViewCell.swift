@@ -9,10 +9,18 @@
 import UIKit
 
 class MessageTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var messageText: UILabel!
+    @IBOutlet weak var leftInsetConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rightInsetCostraint: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
+    }
+    
+    func configureCell(isMy: Bool, _ message: Message) {
+        messageText.text = "asdaldfnaldfnlsnvlasdadfafadfadfsjfnvljdfnvkdjnvdkjfnkvdjnfkv"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
