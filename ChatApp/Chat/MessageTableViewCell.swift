@@ -20,6 +20,12 @@ class MessageTableViewCell: UITableViewCell {
     }
     
     func configureCell(isMy: Bool, _ message: Message) {
+        let inset: CGFloat = 70
+        if isMy {
+            rightInsetCostraint.constant = inset
+        } else {
+            leftInsetConstraint.constant = inset
+        }
         messageText.text = "asdaldfnaldfnlsnvlasdadfafadfadfsjfnvljdfnvkdjnvdkjfnkvdjnfkv"
     }
 
