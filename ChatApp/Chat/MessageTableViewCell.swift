@@ -20,6 +20,8 @@ class MessageTableViewCell: UITableViewCell {
     }
     
     func configureCell(isMy: Bool, _ message: Message) {
+        selectionStyle = UITableViewCell.SelectionStyle.none
+        isUserInteractionEnabled = false
         let inset: CGFloat = 70
         if isMy {
             leftInsetConstraint.constant = inset
