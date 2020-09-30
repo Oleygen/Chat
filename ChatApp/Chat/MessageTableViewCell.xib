@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrK-uN-Ud2" customClass="PaddingLabel" customModule="ChatApp" customModuleProvider="target">
-                        <rect key="frame" x="8" y="8" width="304" height="118"/>
+                        <rect key="frame" x="8" y="16" width="304" height="110"/>
                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -31,11 +31,23 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4r5-w9-CkY">
+                        <rect key="frame" x="12" y="0.0" width="296" height="11"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="11" id="dMc-Js-phD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="4r5-w9-CkY" secondAttribute="trailing" constant="12" id="00Q-pc-aGs"/>
                     <constraint firstItem="MrK-uN-Ud2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="3Fc-Ge-u90"/>
-                    <constraint firstItem="MrK-uN-Ud2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="GzI-BF-M0P"/>
+                    <constraint firstItem="MrK-uN-Ud2" firstAttribute="top" secondItem="4r5-w9-CkY" secondAttribute="bottom" constant="5" id="8Ys-no-rKx"/>
                     <constraint firstAttribute="bottom" secondItem="MrK-uN-Ud2" secondAttribute="bottom" constant="8" id="IOO-8f-2Yo"/>
+                    <constraint firstItem="4r5-w9-CkY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="buP-Fw-fKv"/>
+                    <constraint firstItem="4r5-w9-CkY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gYo-Rw-VGz"/>
                     <constraint firstAttribute="trailing" secondItem="MrK-uN-Ud2" secondAttribute="trailing" constant="8" id="v1H-4G-861"/>
                 </constraints>
             </tableViewCellContentView>
@@ -44,6 +56,7 @@
                 <outlet property="leftInsetConstraint" destination="3Fc-Ge-u90" id="bBO-Pq-lqb"/>
                 <outlet property="messageText" destination="MrK-uN-Ud2" id="GhK-5m-hqw"/>
                 <outlet property="rightInsetCostraint" destination="v1H-4G-861" id="Crg-DP-OqF"/>
+                <outlet property="usernameLabel" destination="4r5-w9-CkY" id="3vz-Gs-e0w"/>
             </connections>
             <point key="canvasLocation" x="134.78260869565219" y="144.64285714285714"/>
         </tableViewCell>

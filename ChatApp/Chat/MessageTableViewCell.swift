@@ -13,6 +13,7 @@ class MessageTableViewCell: UITableViewCell {
     @IBOutlet weak var messageText: UILabel!
     @IBOutlet weak var leftInsetConstraint: NSLayoutConstraint!
     @IBOutlet weak var rightInsetCostraint: NSLayoutConstraint!
+    @IBOutlet weak var usernameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +31,7 @@ class MessageTableViewCell: UITableViewCell {
         isUserInteractionEnabled = false
         let inset: CGFloat = 70
         if isMy {
+            usernameLabel.textAlignment = .right
             leftInsetConstraint.constant = inset
             messageText.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.7)
         } else {
