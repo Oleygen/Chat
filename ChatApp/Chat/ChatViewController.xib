@@ -30,18 +30,18 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="768"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPu-rF-27Z">
-                    <rect key="frame" x="343" y="822" width="51" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPu-rF-27Z">
+                    <rect key="frame" x="364" y="826" width="30" height="22"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="51" id="dDV-sC-rag"/>
+                        <constraint firstAttribute="width" constant="30" id="dDV-sC-rag"/>
                     </constraints>
-                    <state key="normal" title="Send"/>
+                    <state key="normal" title="Send" image="paperplane.fill" catalog="system"/>
                     <connections>
                         <action selector="sendButtonAction:" destination="-1" eventType="touchUpInside" id="ty5-vy-KgV"/>
                     </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QeP-sF-nln">
-                    <rect key="frame" x="26" y="820" width="309" height="34"/>
+                    <rect key="frame" x="26" y="820" width="318" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -67,7 +67,7 @@
                             <state key="normal" title="Logout"/>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.20726742724804181" green="0.49110629856788091" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="ckH-8w-ob1" firstAttribute="leading" secondItem="f0q-sl-zN5" secondAttribute="leading" constant="8" id="1sJ-uY-8WL"/>
                         <constraint firstItem="0bS-g3-DYG" firstAttribute="trailing" secondItem="ckH-8w-ob1" secondAttribute="trailing" id="Gfv-zl-kwg"/>
@@ -85,7 +85,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="f0q-sl-zN5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2Zm-LV-LgP"/>
-                <constraint firstItem="oPu-rF-27Z" firstAttribute="leading" secondItem="QeP-sF-nln" secondAttribute="trailing" constant="8" id="CzX-sK-OII"/>
+                <constraint firstItem="oPu-rF-27Z" firstAttribute="leading" secondItem="QeP-sF-nln" secondAttribute="trailing" constant="20" id="CzX-sK-OII"/>
                 <constraint firstItem="oPu-rF-27Z" firstAttribute="centerY" secondItem="QeP-sF-nln" secondAttribute="centerY" id="Dv4-Zx-L8z"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oPu-rF-27Z" secondAttribute="trailing" constant="20" id="M1C-Gn-Mvk"/>
                 <constraint firstItem="QeP-sF-nln" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="26" id="MKL-58-Kfk"/>
@@ -105,4 +105,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </view>
     </objects>
+    <resources>
+        <image name="paperplane.fill" catalog="system" width="128" height="121"/>
+    </resources>
 </document>
