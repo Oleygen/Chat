@@ -78,9 +78,12 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="70" id="w2q-jq-mMe"/>
+                                    </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Sl9-tR-d0f">
-                                    <rect key="frame" x="182" y="23.5" width="66" height="49"/>
+                                    <rect key="frame" x="184" y="23.5" width="156" height="49"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlY-eu-iRr">
                                             <rect key="frame" x="0.0" y="0.0" width="66" height="17"/>
@@ -103,8 +106,9 @@
                                 <constraint firstItem="Mc8-nR-8AM" firstAttribute="leading" secondItem="NMb-rC-ptJ" secondAttribute="trailing" constant="8" id="7Sp-qq-ubt"/>
                                 <constraint firstAttribute="height" constant="96" id="CJD-Bt-c20"/>
                                 <constraint firstItem="NMb-rC-ptJ" firstAttribute="top" secondItem="Lak-cx-HhS" secondAttribute="top" id="CLH-hW-4xV"/>
-                                <constraint firstItem="Sl9-tR-d0f" firstAttribute="leading" secondItem="Mc8-nR-8AM" secondAttribute="trailing" constant="8" id="G8Q-Ry-mqS"/>
                                 <constraint firstItem="Mc8-nR-8AM" firstAttribute="centerY" secondItem="NMb-rC-ptJ" secondAttribute="centerY" id="R1O-Ia-vQV"/>
+                                <constraint firstAttribute="trailing" secondItem="Sl9-tR-d0f" secondAttribute="trailing" constant="8" id="TfG-im-15d"/>
+                                <constraint firstItem="Sl9-tR-d0f" firstAttribute="leading" secondItem="Mc8-nR-8AM" secondAttribute="trailing" constant="10" id="c64-qC-go4"/>
                                 <constraint firstItem="NMb-rC-ptJ" firstAttribute="leading" secondItem="Lak-cx-HhS" secondAttribute="leading" id="huu-lh-C9i"/>
                                 <constraint firstItem="Sl9-tR-d0f" firstAttribute="centerY" secondItem="NMb-rC-ptJ" secondAttribute="centerY" id="jSh-75-0V5"/>
                             </constraints>
