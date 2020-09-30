@@ -21,11 +21,11 @@ class LoginModel {
                                  password: password) { [weak self] (user, error) in
             guard let self = self else { return }
             guard let _ = error else {
-                self.authenticationError()
+                self.didCreateAccount()
                 return
             }
             guard let _ = user else {
-                self.didCreateAccount()
+                self.authenticationError()
                 return
             }
         }

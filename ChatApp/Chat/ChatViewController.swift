@@ -43,7 +43,8 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func burgerDebugButton(_ sender: Any) {
-        
+        #warning("remove")
+        APIManager.shared.signOut()
     }
     
     private func burgerMenu(show: Bool) {
