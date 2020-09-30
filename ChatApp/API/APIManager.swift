@@ -23,8 +23,8 @@ class APIManager {
     private func setupListener() {
         let ref = database.child(chatMessagesPath)
         ref.observe( .value, with: { (snapshot) in
-             if let userDict = snapshot.value as? [String: Any] {
-                  print(userDict)
+             if let messages = snapshot.value as? [String: Any] {
+                  print(messages)
              }
         })
     }

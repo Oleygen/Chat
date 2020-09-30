@@ -16,6 +16,8 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var burgerMenuView: UIView!
     @IBOutlet weak var messageTexField: UITextField!
     
+    var messages: [Message] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         chatModel.view = self
@@ -47,6 +49,11 @@ class ChatViewController: UIViewController {
     
     @IBAction func burgerDebugButton(_ sender: Any) {
         chatModel.signOut()
+    }
+    
+    func didReceive(messages: [Message]) {
+        self.messages.append(contentsOf: messages)
+        chatTableView.reloadData()
     }
     
     private func burgerMenu(show: Bool) {
@@ -81,14 +88,14 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return messages.count
     }
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        cell.textLabel?.text = messages[indexPath.row].message
         return cell
     }
-    
     
 }

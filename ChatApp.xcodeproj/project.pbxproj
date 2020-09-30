@@ -21,6 +21,7 @@
 		B7CFF93C2523CB0F00B6DA6D /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7CFF93A2523CB0F00B6DA6D /* ChatViewController.xib */; };
 		B7CFF93F2523DAFC00B6DA6D /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CFF93E2523DAFC00B6DA6D /* Todo.swift */; };
 		B7CFF941252407B800B6DA6D /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CFF940252407B800B6DA6D /* ChatModel.swift */; };
+		B7CFF9442524161700B6DA6D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CFF9432524161700B6DA6D /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		B7CFF93A2523CB0F00B6DA6D /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
 		B7CFF93E2523DAFC00B6DA6D /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		B7CFF940252407B800B6DA6D /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		B7CFF9432524161700B6DA6D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Message.swift; path = ChatApp/Chat/Message.swift; sourceTree = SOURCE_ROOT; };
 		E69567C65F8AB33756281F10 /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				B7CFF9372523BB8D00B6DA6D /* APIManager.swift */,
+				B7CFF9432524161700B6DA6D /* Message.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				B7CFF93F2523DAFC00B6DA6D /* Todo.swift in Sources */,
 				B75E00172523AC370054EF32 /* LoginViewController.swift in Sources */,
 				B7CFF9342523AE9300B6DA6D /* LoginModel.swift in Sources */,
+				B7CFF9442524161700B6DA6D /* Message.swift in Sources */,
 				B7CFF941252407B800B6DA6D /* ChatModel.swift in Sources */,
 				B7CFF9382523BB8D00B6DA6D /* APIManager.swift in Sources */,
 				B75E00132523AC370054EF32 /* AppDelegate.swift in Sources */,
