@@ -13,7 +13,7 @@ struct ChatUser {
     var username: String
     let email: String
     init(_ user: User) {
-        self.username = "User №" + user.uid.prefix(3)
+        self.username = "Пользователь №" + String(user.uid.hashValue % 1000)
         self.email = user.email!
     }
 }
