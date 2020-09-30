@@ -13,10 +13,21 @@ import FirebaseDatabase
 class APIManager {
     
     static let shared = APIManager()
-    private init() { }
+    private init() {
+        setupListener()
+    }
     
-    let database = Database.database().reference()
+    private let database = Database.database().reference()
+    private let chatMessagesPath = "/chat/messages"
     
+    private func setupListener() {
+        let ref = database.child(chatMessagesPath)
+        ref.observe( .value, with: { (snapshot) in
+             if let userDict = snapshot.value as? [String: Any] {
+                  print(userDict)
+             }
+        })
+    }
     
     // MARK: - Authorization
     
@@ -47,8 +58,8 @@ class APIManager {
         guard let userEmail = Auth.auth().currentUser?.email else { return }
         let messageData: [String: Any] = ["userEmail": userEmail,
                                           "message": message]
-        database.child("/chat").setValue(messageData)
+        let messageId = UUID().uuidString
+        database.child(chatMessagesPath + "/" + messageId).setValue(messageData)
     }
-    
     
 }
