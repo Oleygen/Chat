@@ -83,13 +83,21 @@ class LoginViewController: UIViewController {
     
     
     func didCreateAccount() {
-        let chatViewController = ChatViewController()
-        chatViewController.modalPresentationStyle = .fullScreen
-        present(chatViewController, animated:true, completion:nil)
+        presentChatViewController()
+    }
+    
+    func didSignIn() {
+        presentChatViewController()
     }
         
     func showError() {
         showAlert()
+    }
+    
+    private func presentChatViewController() {
+        let chatViewController = ChatViewController()
+        chatViewController.modalPresentationStyle = .fullScreen
+        present(chatViewController, animated:true, completion: nil)
     }
     
     

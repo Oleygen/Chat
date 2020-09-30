@@ -21,7 +21,7 @@ class LoginModel {
                                  password: password) { [weak self] (user, error) in
             guard let self = self else { return }
             guard let _ = error else {
-                self.didCreateAccount()
+                self.view.didCreateAccount()
                 return
             }
             guard let _ = user else {
@@ -35,13 +35,18 @@ class LoginModel {
                 password: String) {
         apiManager.signIn(email: email,
                           password: password) { [weak self] (user, error) in
-                            
+            guard let self = self else { return }
+            guard let _ = error else {
+                self.view.didSignIn()
+                return
+            }
+            guard let _ = user else {
+                self.authenticationError()
+                return
+            }
         }
     }
     
-    private func didCreateAccount() {
-        view.didCreateAccount()
-    }
     
     private func authenticationError() {
         view.showError()

@@ -51,7 +51,10 @@ class APIManager {
     func signIn(email: String,
                 password: String,
                 completion: @escaping (AuthDataResult?, Error?) -> Void) {
-        
+        Auth.auth().signIn(withEmail: email,
+                           password: password) { (user: AuthDataResult?, error: Error?) in
+            completion(user, error)
+        }
     }
     
     func signOut() {
