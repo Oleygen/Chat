@@ -34,14 +34,17 @@ class MessageTableViewCell: UITableViewCell {
             usernameLabel.textAlignment = .right
             leftInsetConstraint.constant = inset
             messageText.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.7)
+            usernameLabel.text = "me"
         } else {
+            usernameLabel.textAlignment = .left
             rightInsetCostraint.constant = inset
             messageText.backgroundColor = UIColor.systemBlue
+            usernameLabel.text = message.userEmail
         }
         messageText.layer.cornerRadius = 8
         messageText.clipsToBounds = true
         messageText.text = message.message
-        usernameLabel.text = message.userEmail
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
