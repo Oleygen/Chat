@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginModel.view = self
+        createAccountButton.setBorder()
     }
     
     @IBAction func createAccountButtonAction(_ sender: Any) {
