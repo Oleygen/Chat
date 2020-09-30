@@ -83,7 +83,9 @@ class ChatViewController: UIViewController {
         chatTableView.scrollToBottomRow()
     }
     
-    func setupLoggedEmail(_ user: ChatUser) {
+    func setupUser(_ user: ChatUser) {
+        profileUsernameLabel.text = user.username
+        profileEmailLabel.text = user.email
         chatUser = user
     }
     

@@ -16,7 +16,7 @@ class ChatModel {
     
     init(view: ChatViewController) {
         self.view = view
-        view.setupLoggedEmail(apiManager.getUser())
+        view.setupUser(apiManager.getUser())
         apiManager.listenerAllMessages = { [weak self] messages in
             self?.view.didReceive(allMessages: messages)
         }
