@@ -37,6 +37,7 @@ class ChatViewController: UIViewController {
         chatTableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil),
                                forCellReuseIdentifier: "MessageTableViewCell")
         chatTableView.rowHeight = UITableView.automaticDimension
+        chatTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
     }
     
     private func setupGestures() {

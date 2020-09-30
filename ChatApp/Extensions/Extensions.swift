@@ -13,7 +13,7 @@ extension UIButton {
         self.backgroundColor = .clear
         self.layer.cornerRadius = 5
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.blue.cgColor
+        self.layer.borderColor = UIColor.systemBlue.cgColor
     }
 }
 

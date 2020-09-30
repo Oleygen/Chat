@@ -41,6 +41,7 @@ class MessageTableViewCell: UITableViewCell {
         messageText.layer.cornerRadius = 8
         messageText.clipsToBounds = true
         messageText.text = message.message
+        usernameLabel.text = message.userEmail
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
