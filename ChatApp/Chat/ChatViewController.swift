@@ -28,6 +28,7 @@ class ChatViewController: UIViewController {
     private func setupTableView() {
         chatTableView.delegate = self
         chatTableView.dataSource = self
+        chatTableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageTableViewCell")
     }
     
     private func setupGestures() {
@@ -93,8 +94,8 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = messages[indexPath.row].message
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageTableViewCell") as! MessageTableViewCell
+//        cell.textLabel?.text = messages[indexPath.row].message
         return cell
     }
     
