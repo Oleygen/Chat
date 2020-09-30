@@ -27,7 +27,7 @@ class APIManager {
             guard let messagesDict = snapshot.value as? [String: String] else { return }
             print(messagesDict)
             var messages: [Message] = []
-            for (keyId, message) in messagesDict {
+            for (_, message) in messagesDict {
                 let decodedMessage = try! JSONDecoder().decode(Message.self, from: message.data(using: .utf8)!)
                 messages.append(decodedMessage)
             }
