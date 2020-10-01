@@ -72,11 +72,7 @@ class ChatViewController: UIViewController {
     
     @IBAction func logoutButtonAction(_ sender: Any) {
         chatModel.signOut()
-//        let loginViewController = LoginViewController()
-//        loginViewController.modalPresentationStyle = .popover
-//        present(loginViewController, animated: true) {
-//            self.dismiss(animated: false, completion: nil)
-//        }
+        dismiss(animated: true)
     }
     
     func didReceive(allMessages: [Message]) {

@@ -24,7 +24,7 @@ class LoginModel {
                 self.authenticationError()
                 return
             }
-            self.view.successSignIn(email: email)
+            self.view.successSignIn()
         }
     }
     
@@ -37,7 +37,7 @@ class LoginModel {
                 self.authenticationError()
                 return
             }
-            self.view.successSignIn(email: email)
+            self.view.successSignIn()
         }
     }
     

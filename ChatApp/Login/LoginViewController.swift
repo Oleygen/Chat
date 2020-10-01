@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -34,6 +35,13 @@ class LoginViewController: UIViewController {
         signinButton.setBorder()
         signinTextFieldsView.isHidden = true
         disableSigninTabbarButton()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if Firebase.Auth.auth().currentUser != nil {
+            presentChatViewController()
+        }
     }
     
     @IBAction func createAccountButtonAction(_ sender: Any) {
@@ -81,18 +89,18 @@ class LoginViewController: UIViewController {
         signinTabbarButton.tintColor = UIColor.white.withAlphaComponent(0.5)
     }
     
-    func successSignIn(email: String) {
-        presentChatViewController(email: email)
+    func successSignIn() {
+        presentChatViewController()
     }
         
     func showError() {
         showAlert()
     }
     
-    private func presentChatViewController(email: String) {
+    private func presentChatViewController() {
         let chatViewController = ChatViewController()
         chatViewController.modalPresentationStyle = .overCurrentContext
-        present(chatViewController, animated:true, completion: nil)
+        present(chatViewController, animated: true, completion: nil)
     }
     
     
