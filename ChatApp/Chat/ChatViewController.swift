@@ -64,6 +64,7 @@ class ChatViewController: UIViewController {
     @IBAction func settingsButtonAction(_ sender: Any) {
         let settingsViewController = SettingsViewController()
         settingsViewController.setupUser(chatUser)
+        settingsViewController.chatViewController = self
         settingsViewController.modalPresentationStyle = .popover
         present(settingsViewController, animated: true, completion: nil)
     }
@@ -93,6 +94,10 @@ class ChatViewController: UIViewController {
         profileUsernameLabel.text = user.username
         profileEmailLabel.text = user.email
         chatUser = user
+    }
+    
+    func setupUserAvatar(_ image: UIImage) {
+        profileUsernameAvatarImage.image = image
     }
     
     private func burgerMenu(show: Bool) {

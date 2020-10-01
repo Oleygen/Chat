@@ -11,6 +11,7 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     private var user: ChatUser?
+    weak var chatViewController: ChatViewController?
     
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var setAvatarPhotoButton: UIButton!
@@ -49,10 +50,13 @@ extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationC
         present(picker, animated: true)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }
         dismiss(animated: true)
         avatarImageView.image = image
+        user?.image = image
+        chatViewController!.setupUserAvatar(image)
     }
     
 }
