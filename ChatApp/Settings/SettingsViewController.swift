@@ -22,6 +22,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        avatarImageView.setBorder()
     }
     
     func setupUser(_ user: ChatUser) {

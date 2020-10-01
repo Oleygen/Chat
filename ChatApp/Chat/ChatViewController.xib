@@ -25,22 +25,20 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat ViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkK-E4-Ica">
-                    <rect key="frame" x="130.5" y="443" width="153.5" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wDi-Tr-7u5">
                     <rect key="frame" x="0.0" y="44" width="414" height="768"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="poK-8j-h0e">
+                    <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                    <color key="backgroundColor" red="0.94066564370725225" green="0.93482299995751772" blue="0.94650828745698679" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPu-rF-27Z">
                     <rect key="frame" x="364" y="826" width="30" height="22"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="dDV-sC-rag"/>
                     </constraints>
-                    <state key="normal" title="Send" image="paperplane.fill" catalog="system"/>
+                    <state key="normal" image="paperplane.fill" catalog="system"/>
                     <connections>
                         <action selector="sendButtonAction:" destination="-1" eventType="touchUpInside" id="ty5-vy-KgV"/>
                     </connections>
@@ -149,21 +147,23 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="f0q-sl-zN5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2Zm-LV-LgP"/>
+                <constraint firstItem="poK-8j-h0e" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="BIi-Zv-bmS"/>
                 <constraint firstItem="oPu-rF-27Z" firstAttribute="leading" secondItem="QeP-sF-nln" secondAttribute="trailing" constant="20" id="CzX-sK-OII"/>
                 <constraint firstItem="oPu-rF-27Z" firstAttribute="centerY" secondItem="QeP-sF-nln" secondAttribute="centerY" id="Dv4-Zx-L8z"/>
+                <constraint firstItem="poK-8j-h0e" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ha5-EF-eO2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oPu-rF-27Z" secondAttribute="trailing" constant="20" id="M1C-Gn-Mvk"/>
                 <constraint firstItem="QeP-sF-nln" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="MKL-58-Kfk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="f0q-sl-zN5" secondAttribute="trailing" constant="50" id="NSG-8v-XwG"/>
                 <constraint firstItem="wDi-Tr-7u5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TEn-63-uzM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="f0q-sl-zN5" secondAttribute="bottom" id="UcZ-sQ-i9A"/>
+                <constraint firstItem="poK-8j-h0e" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Zjc-SM-SbK"/>
                 <constraint firstItem="QeP-sF-nln" firstAttribute="top" secondItem="wDi-Tr-7u5" secondAttribute="bottom" constant="8" id="eV7-xl-gkP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QeP-sF-nln" secondAttribute="bottom" constant="8" id="gct-Mt-IwL"/>
                 <constraint firstItem="f0q-sl-zN5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gpy-M3-dyj"/>
+                <constraint firstItem="poK-8j-h0e" firstAttribute="top" secondItem="wDi-Tr-7u5" secondAttribute="bottom" id="gym-be-PPN"/>
                 <constraint firstItem="wDi-Tr-7u5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="idj-0A-OP4"/>
-                <constraint firstItem="dkK-E4-Ica" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="jjj-El-Zlg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wDi-Tr-7u5" secondAttribute="trailing" id="nUi-fu-3mh"/>
                 <constraint firstItem="f0q-sl-zN5" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="vWQ-Qz-J51"/>
-                <constraint firstItem="dkK-E4-Ica" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="xNN-8V-0Ze"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>

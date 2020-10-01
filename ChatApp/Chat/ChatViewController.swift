@@ -33,6 +33,7 @@ class ChatViewController: UIViewController {
         setupTableView()
         setupGestures()
         setupButtons()
+        profileUsernameAvatarImage.setBorder()
     }
     
     private func setupTableView() {

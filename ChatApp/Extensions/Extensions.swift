@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIButton {
+extension UIView {
     func setBorder() {
         self.backgroundColor = .clear
         self.layer.cornerRadius = 5
