@@ -16,6 +16,7 @@ class APIManager {
     static let shared = APIManager()
     private init() {
         messagesDatabase = database.child(chatMessagesPath)
+        imagesStorage = storage.child(imagesPath)
         setupListener()
     }
     
@@ -25,7 +26,8 @@ class APIManager {
     var listenerAllMessages: (([Message]) -> Void)?
     var listenerNewMessages: (([Message]) -> Void)?
     
-    let storage = Storage.storage().reference()
+    private let storage = Storage.storage().reference()
+    private let imagesStorage: StorageReference
     private let imagesPath = "/images"
     
     private func setupListener() {
@@ -119,13 +121,21 @@ class APIManager {
     // MARK: - Images
     
     func saveImageToServer(_ imageData: Data, for userEmail: String) {
-        let imageReference = storage.child(imagesPath).child(userEmail)
+        let imageReference = imagesStorage.child(userEmail)
         imageReference.putData(imageData, metadata: nil) { metadata, error in
             if let error = error {
                 assert(false, "error image save \(error)")
             }
         }
         
+    }
+    
+    func downloadUserAvatar(email: String,
+                            completion: @escaping (Data) -> Void) {
+        let imageReference = imagesStorage.child(email)
+        imageReference.downloadURL { (url, error) in
+            print(url)
+        }
     }
     
 }
