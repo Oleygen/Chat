@@ -15,13 +15,13 @@ class APIManager {
     
     static let shared = APIManager()
     private init() {
-        reference = database.child(chatMessagesPath)
+        messagesDatabase = database.child(chatMessagesPath)
         setupListener()
     }
     
     private let database = Database.database().reference()
     private let chatMessagesPath = "/chat/messages"
-    private let reference: DatabaseReference
+    private let messagesDatabase: DatabaseReference
     var listenerAllMessages: (([Message]) -> Void)?
     var listenerNewMessages: (([Message]) -> Void)?
     
@@ -29,7 +29,7 @@ class APIManager {
     private let imagesPath = "/images"
     
     private func setupListener() {
-        reference.observe(.childAdded, with: { [weak self] (snapshot) in
+        messagesDatabase.observe(.childAdded, with: { [weak self] (snapshot) in
             guard let self = self else { return }
             if let object = snapshot.value as? String {
                 let objectData = object.data(using: .utf8)!
@@ -37,7 +37,7 @@ class APIManager {
                 self.listenerNewMessages?([decodedMessage])
             }
         })
-        reference.observe(.value, with: { [weak self] (snapshot) in
+        messagesDatabase.observe(.value, with: { [weak self] (snapshot) in
             guard let self = self else { return }
             if let _ = snapshot.value as? [String: String] {
                 self.listenerAllMessages?(self.decodeMessages(snapshot))
@@ -101,7 +101,7 @@ class APIManager {
     }
     
     func updateAllMessages() {
-        reference.observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
+        messagesDatabase.observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
             guard let self = self else { return }
             self.listenerAllMessages?(self.decodeMessages(snapshot))
         })
