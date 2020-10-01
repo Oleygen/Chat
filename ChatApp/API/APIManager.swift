@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import FirebaseDatabase
+import FirebaseStorage
 
 class APIManager {
     
@@ -20,9 +21,12 @@ class APIManager {
     
     private let database = Database.database().reference()
     private let chatMessagesPath = "/chat/messages"
-    let reference: DatabaseReference
+    private let reference: DatabaseReference
     var listenerAllMessages: (([Message]) -> Void)?
     var listenerNewMessages: (([Message]) -> Void)?
+    
+    let storage = Storage.storage().reference()
+    private let imagesPath = "/images"
     
     private func setupListener() {
         reference.observe(.childAdded, with: { [weak self] (snapshot) in
@@ -109,6 +113,19 @@ class APIManager {
     
     func getUser() -> ChatUser {
         return ChatUser(Firebase.Auth.auth().currentUser!)
+    }
+    
+    
+    // MARK: - Images
+    
+    func saveImageToServer(_ imageData: Data, for userEmail: String) {
+        let imageReference = storage.child(imagesPath).child(userEmail)
+        imageReference.putData(imageData, metadata: nil) { metadata, error in
+            if let error = error {
+                assert(false, "error image save \(error)")
+            }
+        }
+        
     }
     
 }

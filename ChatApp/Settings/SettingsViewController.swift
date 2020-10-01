@@ -9,6 +9,8 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
+    
+    private lazy var settingsModel = SettingsModel(view: self)
 
     private var user: ChatUser?
     weak var chatViewController: ChatViewController?
@@ -22,6 +24,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        _ = settingsModel
         avatarImageView.setBorder()
     }
     
@@ -53,11 +56,15 @@ extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationC
     
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        guard let image = info[.editedImage] as? UIImage else { return }
+        guard let image = info[.editedImage] as? UIImage,
+              let imageData = image.jpegData(compressionQuality: 1),
+              let userEmail = user?.email
+            else { return }
         dismiss(animated: true)
         avatarImageView.image = image
         user?.image = image
-        chatViewController!.setupUserAvatar(image)
+        chatViewController?.setupUserAvatar(image)
+        settingsModel.saveImageToServer(imageData, for: userEmail)
     }
     
 }
