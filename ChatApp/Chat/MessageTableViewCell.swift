@@ -33,12 +33,12 @@ class MessageTableViewCell: UITableViewCell {
             usernameLabel.textAlignment = .right
             leftInsetConstraint.constant = inset
             messageText.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.7)
-            usernameLabel.text = "me" + formatDate(message.timestamp)
+            usernameLabel.text = "me - " + formatDate(message.timestamp)
         } else {
             usernameLabel.textAlignment = .left
             rightInsetCostraint.constant = inset
             messageText.backgroundColor = UIColor.systemBlue
-            usernameLabel.text = message.senderName + formatDate(message.timestamp)
+            usernameLabel.text = message.senderName + " - " + formatDate(message.timestamp)
         }
         messageText.layer.cornerRadius = 8
         messageText.clipsToBounds = true
