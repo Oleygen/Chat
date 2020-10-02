@@ -24,6 +24,7 @@ class ChatViewController: UIViewController {
     @IBOutlet private weak var profileUsernameLabel: UILabel!
     @IBOutlet private weak var profileEmailLabel: UILabel!
     @IBOutlet private weak var profileUsernameAvatarImage: UIImageView!
+    @IBOutlet private weak var usernameInitialsLabel: UILabel!
     
     private var messages: [Message] = []
     
@@ -90,6 +91,7 @@ class ChatViewController: UIViewController {
     func setupUser(_ user: ChatUser) {
         profileUsernameLabel.text = user.name
         profileEmailLabel.text = user.email
+        usernameInitialsLabel.text = String(user.name.prefix(2))
         chatUser = user
     }
     

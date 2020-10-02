@@ -17,6 +17,7 @@
                 <outlet property="profileUsernameAvatarImage" destination="NMb-rC-ptJ" id="vl4-sZ-SQt"/>
                 <outlet property="profileUsernameLabel" destination="ZlY-eu-iRr" id="iL6-Gv-8gj"/>
                 <outlet property="settingsButton" destination="ckH-8w-ob1" id="vBV-Fp-W3I"/>
+                <outlet property="usernameInitialsLabel" destination="kSK-6m-VpH" id="jln-3e-Z5H"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -54,12 +55,18 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lak-cx-HhS" userLabel="Profile">
                             <rect key="frame" x="8" y="8" width="348" height="96"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smiley" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NMb-rC-ptJ">
-                                    <rect key="frame" x="0.0" y="0.5" width="96" height="95"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NMb-rC-ptJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="NMb-rC-ptJ" secondAttribute="height" multiplier="1:1" id="nO2-CH-aCD"/>
                                     </constraints>
                                 </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSK-6m-VpH">
+                                    <rect key="frame" x="16" y="18" width="64" height="60"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Mc8-nR-8AM">
                                     <rect key="frame" x="104" y="8" width="70" height="80"/>
                                     <subviews>
@@ -93,10 +100,12 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="NMb-rC-ptJ" secondAttribute="bottom" id="0WW-VX-Joz"/>
+                                <constraint firstItem="kSK-6m-VpH" firstAttribute="centerX" secondItem="NMb-rC-ptJ" secondAttribute="centerX" id="5Hm-iF-xQA"/>
                                 <constraint firstItem="Mc8-nR-8AM" firstAttribute="leading" secondItem="NMb-rC-ptJ" secondAttribute="trailing" constant="8" id="7Sp-qq-ubt"/>
                                 <constraint firstAttribute="height" constant="96" id="CJD-Bt-c20"/>
                                 <constraint firstItem="NMb-rC-ptJ" firstAttribute="top" secondItem="Lak-cx-HhS" secondAttribute="top" id="CLH-hW-4xV"/>
                                 <constraint firstItem="Mc8-nR-8AM" firstAttribute="centerY" secondItem="NMb-rC-ptJ" secondAttribute="centerY" id="R1O-Ia-vQV"/>
+                                <constraint firstItem="kSK-6m-VpH" firstAttribute="centerY" secondItem="NMb-rC-ptJ" secondAttribute="centerY" id="apg-Xg-xvm"/>
                                 <constraint firstItem="NMb-rC-ptJ" firstAttribute="leading" secondItem="Lak-cx-HhS" secondAttribute="leading" id="huu-lh-C9i"/>
                             </constraints>
                         </view>
@@ -160,6 +169,5 @@
     </objects>
     <resources>
         <image name="paperplane.fill" catalog="system" width="128" height="121"/>
-        <image name="smiley" catalog="system" width="128" height="121"/>
     </resources>
 </document>
