@@ -17,8 +17,9 @@ class ChatModel {
     
     init(view: ChatViewController) {
         self.view = view
-        self.view.setupUser(apiManager.getUser())
-        downloadAvatar(email: apiManager.getUser().email)
+        let user = apiManager.getUser()
+        self.view.setupUser(user)
+        downloadAvatar(email: user.email)
         apiManager.listenerAllMessages = { [weak self] messages in
             self?.view.didReceive(allMessages: messages)
         }
