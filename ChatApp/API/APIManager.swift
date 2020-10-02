@@ -114,14 +114,13 @@ class APIManager {
     }
     
     func getUser(completion: @escaping (ChatUser) -> Void) {
-        guard let userID = Auth.auth().currentUser?.uid else {
-            completion(ChatUser(Firebase.Auth.auth().currentUser!))
-            return
-        }
+        let userID = Auth.auth().currentUser!.uid
         usernamesDatabase.child(userID).observeSingleEvent(of: .value) { (snapshot) in
             if let name = snapshot.value as? String {
                 let user = ChatUser(Firebase.Auth.auth().currentUser!, name: name)
                 completion(user)
+            } else {
+                completion(ChatUser(Firebase.Auth.auth().currentUser!))
             }
         }
     }
