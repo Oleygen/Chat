@@ -26,6 +26,9 @@ class ChatViewController: UIViewController {
     @IBOutlet private weak var profileUsernameAvatarImage: UIImageView!
     @IBOutlet private weak var usernameInitialsLabel: UILabel!
     
+    @IBOutlet private weak var keyboardConstraint: NSLayoutConstraint!
+    private let keyboardHeight: CGFloat = 250
+    
     private var messages: [Message] = []
     
     override func viewDidLoad() {
@@ -35,6 +38,7 @@ class ChatViewController: UIViewController {
         setupGestures()
         setupButtons()
         profileUsernameAvatarImage.setBorder()
+        registerKeyboardEvents()
     }
     
     private func setupTableView() {
@@ -130,6 +134,39 @@ class ChatViewController: UIViewController {
     private func setupButtons() {
         settingsButton.setBorder()
         logoutButton.setBorder()
+    }
+    
+    
+    // MARK: - Keyboard
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    private func registerKeyboardEvents() {
+        NotificationCenter.default
+            .addObserver(self, selector: #selector(ChatViewController.keyboardWillShow),
+                         name: UIResponder.keyboardWillShowNotification,
+                         object: nil)
+        NotificationCenter.default
+            .addObserver(self, selector: #selector(ChatViewController.keyboardWillHide),
+                         name: UIResponder.keyboardWillHideNotification,
+                         object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        keyboardConstraint.constant = -keyboardHeight
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        keyboardConstraint.constant = 0
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
     }
 }
 

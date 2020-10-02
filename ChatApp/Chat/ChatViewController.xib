@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="burgerMenuView" destination="f0q-sl-zN5" id="b4f-6K-xva"/>
                 <outlet property="chatTableView" destination="wDi-Tr-7u5" id="IK3-dC-GNz"/>
+                <outlet property="keyboardConstraint" destination="Zjc-SM-SbK" id="zze-to-woh"/>
                 <outlet property="logoutButton" destination="0bS-g3-DYG" id="fgP-2J-T4s"/>
                 <outlet property="messageTexField" destination="QeP-sF-nln" id="t7Q-oW-Nfe"/>
                 <outlet property="profileEmailLabel" destination="Iz8-CB-ciO" id="gCP-5q-ZGG"/>
