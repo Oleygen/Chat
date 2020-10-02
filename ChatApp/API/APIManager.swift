@@ -109,6 +109,27 @@ class APIManager {
         usernamesDatabase.child(userID).setValue(username)
     }
     
+    func getLoggedEmail() -> String {
+        return Firebase.Auth.auth().currentUser!.email!
+    }
+    
+    func getUser(completion: @escaping (ChatUser) -> Void) {
+        guard let userID = Auth.auth().currentUser?.uid else {
+            completion(ChatUser(Firebase.Auth.auth().currentUser!))
+            return
+        }
+        usernamesDatabase.child(userID).observeSingleEvent(of: .value) { (snapshot) in
+            if let name = snapshot.value as? String {
+                let user = ChatUser(Firebase.Auth.auth().currentUser!, name: name)
+                completion(user)
+            }
+        }
+    }
+    
+    func getUser() -> ChatUser {
+        return ChatUser(Firebase.Auth.auth().currentUser!)
+    }
+    
     
     // MARK: - Chat
     
@@ -129,14 +150,6 @@ class APIManager {
             guard let self = self else { return }
             self.listenerAllMessages?(self.decodeMessages(snapshot))
         })
-    }
-    
-    func getLoggedEmail() -> String {
-        return Firebase.Auth.auth().currentUser!.email!
-    }
-    
-    func getUser() -> ChatUser {
-        return ChatUser(Firebase.Auth.auth().currentUser!)
     }
     
     

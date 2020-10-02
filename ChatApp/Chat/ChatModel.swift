@@ -17,16 +17,17 @@ class ChatModel {
     
     init(view: ChatViewController) {
         self.view = view
-        let user = apiManager.getUser()
-        self.view.setupUser(user)
-        downloadAvatar(email: user.email)
-        apiManager.listenerAllMessages = { [weak self] messages in
-            self?.view.didReceive(allMessages: messages)
+        let user = apiManager.getUser { user in
+            self.view.setupUser(user)
+            self.downloadAvatar(email: user.email)
+            self.apiManager.listenerAllMessages = { [weak self] messages in
+                self?.view.didReceive(allMessages: messages)
+            }
+            self.apiManager.listenerNewMessages = { [weak self] messages in
+                self?.view.didReceive(newMessages: messages)
+            }
+            self.apiManager.updateAllMessages()
         }
-        apiManager.listenerNewMessages = { [weak self] messages in
-            self?.view.didReceive(newMessages: messages)
-        }
-        apiManager.updateAllMessages()
     }
     
     func send(message: String) {
