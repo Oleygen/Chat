@@ -33,6 +33,7 @@ class SettingsViewController: UIViewController {
         usernameLabel.text = user.username
         passwordLabel.text = "******"
         emailLabel.text = user.email
+        avatarImageView.image = user.image
         self.user = user
     }
     

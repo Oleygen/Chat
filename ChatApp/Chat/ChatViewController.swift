@@ -95,6 +95,7 @@ class ChatViewController: UIViewController {
     
     func setupUserAvatar(_ image: UIImage) {
         profileUsernameAvatarImage.image = image
+        chatUser.image = image
     }
     
     private func burgerMenu(show: Bool) {
