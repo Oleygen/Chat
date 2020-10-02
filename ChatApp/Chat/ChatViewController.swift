@@ -88,14 +88,14 @@ class ChatViewController: UIViewController {
     }
     
     func setupUser(_ user: ChatUser) {
-        profileUsernameLabel.text = user.username
+        profileUsernameLabel.text = user.name
         profileEmailLabel.text = user.email
         chatUser = user
     }
     
     func setupUserAvatar(_ image: UIImage) {
         profileUsernameAvatarImage.image = image
-        chatUser.image = image
+        chatUser.avatar = image
     }
     
     private func burgerMenu(show: Bool) {

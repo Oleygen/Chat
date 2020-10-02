@@ -10,12 +10,12 @@ import Foundation
 import FirebaseAuth
 
 struct ChatUser {
-    var username: String
+    var name: String
     let email: String
-    var image: UIImage?
+    var avatar: UIImage?
     init(_ user: User) {
         let defaultUsernameNumber = String(abs(user.uid.hashValue % 1000))
-        self.username = "Пользователь №" + defaultUsernameNumber
+        self.name = "Пользователь №" + defaultUsernameNumber
         self.email = user.email!
     }
 }

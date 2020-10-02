@@ -29,9 +29,9 @@ class SettingsViewController: UIViewController {
     
     func setupUser(_ user: ChatUser) {
         _ = view
-        usernameTextField.text = user.username
+        usernameTextField.text = user.name
         emailLabel.text = user.email
-        avatarImageView.image = user.image
+        avatarImageView.image = user.avatar
         self.user = user
     }
     
@@ -83,7 +83,7 @@ extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationC
             else { return }
         dismiss(animated: true)
         avatarImageView.image = image
-        user?.image = image
+        user?.avatar = image
         chatViewController?.setupUserAvatar(image)
         settingsModel.saveImageToServer(imageData, for: userEmail)
     }
