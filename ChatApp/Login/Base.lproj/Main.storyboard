@@ -18,7 +18,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Oc-dd-Wey" userLabel="Tabbar">
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="170" translatesAutoresizingMaskIntoConstraints="NO" id="MxP-ar-pWJ">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="170" translatesAutoresizingMaskIntoConstraints="NO" id="MxP-ar-pWJ">
                                         <rect key="frame" x="99" y="6.5" width="216.5" height="37"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Fh-vL-Ho6">
@@ -43,6 +43,8 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="MxP-ar-pWJ" firstAttribute="centerX" secondItem="6Oc-dd-Wey" secondAttribute="centerX" id="0wO-Qf-vjU"/>
+                                    <constraint firstItem="MxP-ar-pWJ" firstAttribute="centerY" secondItem="6Oc-dd-Wey" secondAttribute="centerY" id="9Ml-XT-EqS"/>
                                     <constraint firstAttribute="height" constant="50" id="mX2-Fo-4yJ"/>
                                 </constraints>
                             </view>
