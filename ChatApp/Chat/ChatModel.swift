@@ -41,7 +41,7 @@ class ChatModel {
     }
     
     func downloadAvatar(email: String) {
-        apiManager.downloadUserAvatar(email: "asdasd@gmail.com") { data in
+        apiManager.downloadUserAvatar(email: email) { data in
             let image = UIImage(data: data)!
             self.view!.setupUserAvatar(image)
         }
