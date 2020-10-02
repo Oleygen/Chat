@@ -34,10 +34,15 @@ class SettingsViewController: UIViewController {
         usernameTextField.text = user.name
         emailLabel.text = user.email
         if let avatar = user.avatar {
-            avatarImageView.image = avatar
+            setupAvatar(image: avatar)
         }
         userIntialsLabel.text = String(user.name.prefix(2))
         self.user = user
+    }
+    
+    private func setupAvatar(image: UIImage) {
+        avatarImageView.image = image
+        userIntialsLabel.isHidden = true
     }
     
     @IBAction func setAvatarButtonAction(_ sender: Any) {
@@ -86,7 +91,7 @@ extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationC
               let userEmail = user?.email
             else { return }
         dismiss(animated: true)
-        avatarImageView.image = image
+        setupAvatar(image: image)
         user?.avatar = image
         chatViewController?.setupUserAvatar(image)
         settingsModel.saveImageToServer(imageData, for: userEmail)

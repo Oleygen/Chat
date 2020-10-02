@@ -98,6 +98,7 @@ class ChatViewController: UIViewController {
     func setupUserAvatar(_ image: UIImage) {
         profileUsernameAvatarImage.image = image
         chatUser.avatar = image
+        usernameInitialsLabel.isHidden = true
     }
     
     private func burgerMenu(show: Bool) {
