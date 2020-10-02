@@ -89,6 +89,14 @@ class APIManager {
         }
     }
     
+    func changePassword(_ newPassword: String,
+                        completion: @escaping (_ success: Bool) -> Void) {
+        Auth.auth().currentUser?.updatePassword(to: newPassword) { (error) in
+            let isSuccess = error == nil
+            completion(isSuccess)
+        }
+    }
+    
     
     // MARK: - Chat
     

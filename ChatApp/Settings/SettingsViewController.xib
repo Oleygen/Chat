@@ -45,6 +45,9 @@
                                 <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3K4-VW-fbG">
                                     <rect key="frame" x="0.0" y="33.5" width="123" height="55.5"/>
                                     <state key="normal" title="Change password"/>
+                                    <connections>
+                                        <action selector="changePasswordButtonAction:" destination="-1" eventType="touchUpInside" id="8pD-0n-wOr"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvd-Ud-S4e">
                                     <rect key="frame" x="0.0" y="91" width="41" height="20.5"/>

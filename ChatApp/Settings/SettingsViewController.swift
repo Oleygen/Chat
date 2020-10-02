@@ -39,6 +39,28 @@ class SettingsViewController: UIViewController {
         showImagePicker()
     }
     
+    @IBAction func changePasswordButtonAction(_ sender: Any) {
+        let alertController = UIAlertController(title: "Enter new password",
+                                                message: "",
+                                                preferredStyle: UIAlertController.Style.alert)
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            // textField.placeholder = "Enter new password"
+        }
+        let saveAction = UIAlertAction(title: "Confirm",
+                                       style: UIAlertAction.Style.default,
+                                       handler: { alert -> Void in
+            let passwordTextField = alertController.textFields![0] as UITextField
+            let newPassword = passwordTextField.text
+            print(newPassword)
+        })
+        let cancelAction = UIAlertAction(title: "Cancel",
+                                         style: UIAlertAction.Style.default,
+                                         handler: { (action: UIAlertAction!) -> Void in })
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
 }
 
 
