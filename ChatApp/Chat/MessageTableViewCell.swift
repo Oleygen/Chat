@@ -33,17 +33,25 @@ class MessageTableViewCell: UITableViewCell {
             usernameLabel.textAlignment = .right
             leftInsetConstraint.constant = inset
             messageText.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.7)
-            usernameLabel.text = "me"
+            usernameLabel.text = "me" + formatDate(message.timestamp)
         } else {
             usernameLabel.textAlignment = .left
             rightInsetCostraint.constant = inset
             messageText.backgroundColor = UIColor.systemBlue
-            usernameLabel.text = message.senderName
+            usernameLabel.text = message.senderName + formatDate(message.timestamp)
         }
         messageText.layer.cornerRadius = 8
         messageText.clipsToBounds = true
         messageText.text = message.message
-        
+    }
+    
+    private func formatDate(_ date: String) -> String {
+        guard let timestamp = TimeInterval(date) else { return ""}
+        let date = Date(timeIntervalSince1970: timestamp)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm E, d MMM y"
+        let dateString = formatter.string(from: date)
+        return dateString
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
