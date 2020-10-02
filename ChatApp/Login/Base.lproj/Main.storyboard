@@ -180,6 +180,7 @@
                         <outlet property="confirmPasswordTextField" destination="MOJ-0V-AWb" id="1XZ-G4-n9n"/>
                         <outlet property="createAccountButton" destination="vwA-gn-GyW" id="n62-Q6-yCY"/>
                         <outlet property="createAccountTabbarButton" destination="0Fh-vL-Ho6" id="Lex-pu-bCh"/>
+                        <outlet property="createAccountView" destination="kvy-Ng-Rf6" id="aZi-ip-ga9"/>
                         <outlet property="emailTextField" destination="KNq-LW-N0R" id="Nmb-ZE-bOm"/>
                         <outlet property="passwordTextField" destination="xC1-Ze-wjy" id="dez-bP-RbX"/>
                         <outlet property="signinButton" destination="jnq-Hp-bek" id="14e-Ow-vfo"/>

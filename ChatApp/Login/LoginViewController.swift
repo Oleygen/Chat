@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var createAccountTabbarButton: UIButton!
     @IBOutlet weak var signinTabbarButton: UIButton!
+    @IBOutlet weak var createAccountView: UIView!
     
     // Signin
     @IBOutlet weak var signinEmailTextField: UITextField!
@@ -70,14 +71,57 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func createAccountScreenButtonAction(_ sender: Any) {
-        signinTextFieldsView.isHidden = true
+        hideSignIn()
+        showCreateAccount()
         disableSigninTabbarButton()
     }
     
     @IBAction func signinScreenButtonAction(_ sender: Any) {
-        signinTextFieldsView.isHidden = false
+        showSignIn()
+        hideCreateAccount()
         disableCreateAccountTabbarButton()
     }
+    
+    
+    // MARK: - Animations
+    
+    private func createAnimation() -> CATransition {
+        let transition = CATransition()
+        transition.duration = 0.25
+        transition.type = CATransitionType.push
+        return transition
+    }
+    
+    private func hideSignIn() {
+        let transition = createAnimation()
+        transition.subtype = CATransitionSubtype.fromLeft
+        signinTextFieldsView.layer.add(transition, forKey: kCATransition)
+        signinTextFieldsView.isHidden = true
+    }
+    
+    private func showSignIn() {
+        let transition = createAnimation()
+        transition.subtype = CATransitionSubtype.fromRight
+        signinTextFieldsView.layer.add(transition, forKey: kCATransition)
+        signinTextFieldsView.isHidden = false
+    }
+    
+    private func showCreateAccount() {
+        let transition = createAnimation()
+        transition.subtype = CATransitionSubtype.fromLeft
+        createAccountView.layer.add(transition, forKey: kCATransition)
+        createAccountView.isHidden = false
+    }
+    
+    private func hideCreateAccount() {
+        let transition = createAnimation()
+        transition.subtype = CATransitionSubtype.fromRight
+        createAccountView.layer.add(transition, forKey: kCATransition)
+        createAccountView.isHidden = false
+    }
+    
+    
+    // MARK: -
     
     private func disableCreateAccountTabbarButton() {
         createAccountTabbarButton.tintColor = UIColor.white.withAlphaComponent(0.5)
