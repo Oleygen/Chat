@@ -99,6 +99,9 @@ extension SettingsViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        guard let newName = textField.text, newName.isCyrillic
+            else { return true }
+        user?.name = newName
         return true
     }
     
