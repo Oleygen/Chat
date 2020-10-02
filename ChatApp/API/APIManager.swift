@@ -35,7 +35,8 @@ class APIManager {
             guard let self = self else { return }
             if let object = snapshot.value as? String {
                 let objectData = object.data(using: .utf8)!
-                let decodedMessage = try! JSONDecoder().decode(Message.self, from: objectData)
+                let decodedMessage = try! JSONDecoder().decode(Message.self,
+                                                               from: objectData)
                 self.listenerNewMessages?([decodedMessage])
             }
         })
@@ -51,7 +52,8 @@ class APIManager {
         guard let messagesDict = snapshot.value as? [String: String] else { return [] }
         var messages: [Message] = []
         for (_, message) in messagesDict {
-            let decodedMessage = try! JSONDecoder().decode(Message.self, from: message.data(using: .utf8)!)
+            let messageData = message.data(using: .utf8)!
+            let decodedMessage = try! JSONDecoder().decode(Message.self, from: messageData)
             messages.append(decodedMessage)
         }
         messages.sort(by: { $0.timestamp < $1.timestamp })
