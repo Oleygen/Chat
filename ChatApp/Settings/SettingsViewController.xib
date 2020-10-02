@@ -12,6 +12,7 @@
                 <outlet property="avatarImageView" destination="xpp-vX-oPF" id="Yo5-mu-u8F"/>
                 <outlet property="emailLabel" destination="Bvd-Ud-S4e" id="NA7-WX-bfe"/>
                 <outlet property="setAvatarPhotoButton" destination="zzM-A0-iDd" id="3fO-nT-fmU"/>
+                <outlet property="userIntialsLabel" destination="0w8-by-7It" id="bWg-JR-a4L"/>
                 <outlet property="usernameTextField" destination="Hho-8H-ZEz" id="kSD-nV-mcZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,13 +22,19 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smiley" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xpp-vX-oPF">
-                    <rect key="frame" x="20" y="52.5" width="125" height="124"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xpp-vX-oPF">
+                    <rect key="frame" x="20" y="52" width="125" height="125"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="125" id="4Vv-ax-NK9"/>
                         <constraint firstAttribute="width" constant="125" id="h0I-5z-FEI"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0w8-by-7It">
+                    <rect key="frame" x="50.5" y="84.5" width="64" height="60"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fR9-H3-Mft">
                     <rect key="frame" x="153" y="52" width="241" height="128"/>
                     <subviews>
@@ -80,8 +87,10 @@
                 <constraint firstItem="fR9-H3-Mft" firstAttribute="leading" secondItem="xpp-vX-oPF" secondAttribute="trailing" constant="8" id="BLm-FV-Wjf"/>
                 <constraint firstItem="zzM-A0-iDd" firstAttribute="centerX" secondItem="xpp-vX-oPF" secondAttribute="centerX" id="C15-hD-hPY"/>
                 <constraint firstItem="xpp-vX-oPF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="H7g-iW-gIp"/>
+                <constraint firstItem="0w8-by-7It" firstAttribute="centerY" secondItem="xpp-vX-oPF" secondAttribute="centerY" id="Qc7-d6-stH"/>
                 <constraint firstItem="1qG-DD-cQD" firstAttribute="height" secondItem="xpp-vX-oPF" secondAttribute="height" multiplier="0.892" id="W9M-JB-XZd"/>
                 <constraint firstItem="zzM-A0-iDd" firstAttribute="top" secondItem="xpp-vX-oPF" secondAttribute="bottom" constant="8" id="Y0g-ej-6Ts"/>
+                <constraint firstItem="0w8-by-7It" firstAttribute="centerX" secondItem="xpp-vX-oPF" secondAttribute="centerX" id="Yam-Dn-iak"/>
                 <constraint firstItem="fR9-H3-Mft" firstAttribute="height" secondItem="xpp-vX-oPF" secondAttribute="height" multiplier="1.024" id="i0b-Ag-O1X"/>
                 <constraint firstItem="1qG-DD-cQD" firstAttribute="centerY" secondItem="xpp-vX-oPF" secondAttribute="centerY" id="lKm-Ev-nLc"/>
                 <constraint firstItem="fR9-H3-Mft" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="ljY-Um-nZa"/>
@@ -92,7 +101,4 @@
             <point key="canvasLocation" x="-123.18840579710145" y="66.964285714285708"/>
         </view>
     </objects>
-    <resources>
-        <image name="smiley" catalog="system" width="128" height="121"/>
-    </resources>
 </document>

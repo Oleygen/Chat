@@ -17,6 +17,7 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var setAvatarPhotoButton: UIButton!
+    @IBOutlet private weak var userIntialsLabel: UILabel!
     
     @IBOutlet private weak var usernameTextField: UITextField!
     @IBOutlet private weak var emailLabel: UILabel!
@@ -35,6 +36,7 @@ class SettingsViewController: UIViewController {
         if let avatar = user.avatar {
             avatarImageView.image = avatar
         }
+        userIntialsLabel.text = String(user.name.prefix(2))
         self.user = user
     }
     
