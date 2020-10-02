@@ -14,7 +14,7 @@ struct ChatUser {
     let email: String
     var avatar: UIImage?
     init(_ user: User) {
-        let defaultUsernameNumber = String(abs(user.uid.hashValue % 1000))
+        let defaultUsernameNumber = String(user.uid.stringHash() % 1000)
         self.name = "Пользователь №" + defaultUsernameNumber
         self.email = user.email!
     }
