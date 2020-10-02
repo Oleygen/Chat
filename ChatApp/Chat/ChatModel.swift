@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ChatModel {
     
@@ -38,4 +39,10 @@ class ChatModel {
         return apiManager.getUser()
     }
     
+    func downloadAvatar(email: String) {
+        apiManager.downloadUserAvatar(email: "asdasd@gmail.com") { data in
+            let image = UIImage(data: data)!
+            self.view!.setupUserAvatar(image)
+        }
+    }
 }

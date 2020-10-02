@@ -134,7 +134,13 @@ class APIManager {
                             completion: @escaping (Data) -> Void) {
         let imageReference = imagesStorage.child(email)
         imageReference.downloadURL { (url, error) in
-            print(url)
+            guard let imageUrl = url else { return }
+            let request = URLRequest(url: imageUrl)
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                DispatchQueue.main.async {
+                    completion(data!)
+                }
+            }.resume()
         }
     }
     
