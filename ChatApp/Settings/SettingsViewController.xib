@@ -12,6 +12,7 @@
                 <outlet property="avatarImageView" destination="xpp-vX-oPF" id="Yo5-mu-u8F"/>
                 <outlet property="emailLabel" destination="Bvd-Ud-S4e" id="NA7-WX-bfe"/>
                 <outlet property="setAvatarPhotoButton" destination="zzM-A0-iDd" id="3fO-nT-fmU"/>
+                <outlet property="usernameTextField" destination="Hho-8H-ZEz" id="kSD-nV-mcZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,7 +42,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3K4-VW-fbG">
+                                <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3K4-VW-fbG">
                                     <rect key="frame" x="0.0" y="33.5" width="123" height="55.5"/>
                                     <state key="normal" title="Change password"/>
                                 </button>

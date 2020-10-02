@@ -18,8 +18,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var setAvatarPhotoButton: UIButton!
     
-    @IBOutlet private weak var usernameLabel: UILabel!
-    @IBOutlet private weak var passwordLabel: UILabel!
+    @IBOutlet private weak var usernameTextField: UITextField!
     @IBOutlet private weak var emailLabel: UILabel!
     
     override func viewDidLoad() {
@@ -30,8 +29,7 @@ class SettingsViewController: UIViewController {
     
     func setupUser(_ user: ChatUser) {
         _ = view
-        usernameLabel.text = user.username
-        passwordLabel.text = "******"
+        usernameTextField.text = user.username
         emailLabel.text = user.email
         avatarImageView.image = user.image
         self.user = user
