@@ -20,12 +20,14 @@ class APIManager {
         setupListener()
     }
     
+    // Messages Database
     private let database = Database.database().reference()
     private let chatMessagesPath = "/chat/messages"
     private let messagesDatabase: DatabaseReference
     var listenerAllMessages: (([Message]) -> Void)?
     var listenerNewMessages: (([Message]) -> Void)?
     
+    // Images Storage
     private let storage = Storage.storage().reference()
     private let imagesStorage: StorageReference
     private let imagesPath = "/images"
@@ -137,7 +139,6 @@ class APIManager {
                 assert(false, "error image save \(error)")
             }
         }
-        
     }
     
     func downloadUserAvatar(email: String,
