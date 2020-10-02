@@ -27,7 +27,6 @@ class ChatViewController: UIViewController {
     @IBOutlet private weak var usernameInitialsLabel: UILabel!
     
     @IBOutlet private weak var keyboardConstraint: NSLayoutConstraint!
-    private let keyboardHeight: CGFloat = 250
     
     private var messages: [Message] = []
     
@@ -156,6 +155,11 @@ class ChatViewController: UIViewController {
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardFrame = notification
+                    .userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
+            else { return }
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        let keyboardHeight = keyboardRectangle.height
         keyboardConstraint.constant = -keyboardHeight
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
