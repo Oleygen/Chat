@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NaturalLanguage
 
 extension UIView {
     func setBorder() {
@@ -42,5 +43,18 @@ extension UITableView {
         let section = indexPath.section
         let row = indexPath.row
         return section < self.numberOfSections && row < self.numberOfRows(inSection: section)
+    }
+}
+
+extension String {
+    var isCyrillic: Bool {
+        let recognizer = NLLanguageRecognizer()
+        recognizer.processString(self)
+        guard let languageCode = recognizer.dominantLanguage?.rawValue else { return false }
+        let detectedLanguage = Locale.current.localizedString(forIdentifier: languageCode)
+        if detectedLanguage != "Russian" {
+            return false
+        }
+        return true
     }
 }
