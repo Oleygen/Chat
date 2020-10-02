@@ -103,7 +103,7 @@ class APIManager {
     func send(message: String) {
         guard let userEmail = Auth.auth().currentUser?.email else { return }
         let timestamp = String(Date().timeIntervalSince1970)
-        let message = Message(username: getUser().name,
+        let message = Message(senderName: getUser().name,
                               timestamp: timestamp,
                               userEmail: userEmail,
                               message: message)
