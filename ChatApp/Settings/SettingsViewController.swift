@@ -25,6 +25,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         _ = settingsModel
         avatarImageView.setBorder()
+        usernameTextField.delegate = self
     }
     
     func setupUser(_ user: ChatUser) {
@@ -87,6 +88,18 @@ extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationC
         user?.avatar = image
         chatViewController?.setupUserAvatar(image)
         settingsModel.saveImageToServer(imageData, for: userEmail)
+    }
+    
+}
+
+
+// MARK: - Username
+
+extension SettingsViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }
