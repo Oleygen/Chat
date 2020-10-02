@@ -29,6 +29,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signinTextFieldsView: UIView!
     @IBOutlet weak var signinButton: UIButton!
     
+    // Keyboard
+    @IBOutlet weak var keyboardConstraint: NSLayoutConstraint!
+    private let keyboardHeight: CGFloat = 250
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loginModel.view = self
@@ -36,6 +40,7 @@ class LoginViewController: UIViewController {
         signinButton.setBorder()
         signinTextFieldsView.isHidden = true
         disableSigninTabbarButton()
+        registerKeyboardEvents()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -167,6 +172,33 @@ class LoginViewController: UIViewController {
                                       style: UIAlertAction.Style.default,
                                       handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+    
+    
+    // MARK: - Keyboard
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    private func registerKeyboardEvents() {
+        NotificationCenter.default
+            .addObserver(self, selector: #selector(LoginViewController.keyboardWillShow),
+                         name: UIResponder.keyboardWillShowNotification,
+                         object: nil)
+        NotificationCenter.default
+            .addObserver(self, selector: #selector(LoginViewController.keyboardWillHide),
+                         name: UIResponder.keyboardWillHideNotification,
+                         object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        keyboardConstraint.constant = -keyboardHeight
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        keyboardConstraint.constant = 0
     }
     
 }
