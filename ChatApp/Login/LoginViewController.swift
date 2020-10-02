@@ -122,7 +122,7 @@ class LoginViewController: UIViewController {
         let transition = createAnimation()
         transition.subtype = CATransitionSubtype.fromRight
         createAccountView.layer.add(transition, forKey: kCATransition)
-        createAccountView.isHidden = false
+        createAccountView.isHidden = true
     }
     
     
