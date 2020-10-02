@@ -31,7 +31,9 @@ class SettingsViewController: UIViewController {
         _ = view
         usernameTextField.text = user.name
         emailLabel.text = user.email
-        avatarImageView.image = user.avatar
+        if let avatar = user.avatar {
+            avatarImageView.image = avatar
+        }
         self.user = user
     }
     
