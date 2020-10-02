@@ -48,13 +48,8 @@ extension UITableView {
 
 extension String {
     var isCyrillic: Bool {
-        let recognizer = NLLanguageRecognizer()
-        recognizer.processString(self)
-        guard let languageCode = recognizer.dominantLanguage?.rawValue else { return false }
-        let detectedLanguage = Locale.current.localizedString(forIdentifier: languageCode)
-        if detectedLanguage != "Russian" {
-            return false
-        }
-        return true
+        let regex = try! NSRegularExpression(pattern: "[^А-Яа-я]")
+        let range = NSRange(location: 0, length: self.utf16.count)
+        return regex.firstMatch(in: self, options: [], range: range) == nil
     }
 }
