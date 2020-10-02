@@ -30,8 +30,8 @@ class ChatModel {
         }
     }
     
-    func send(message: String) {
-        apiManager.send(message: message)
+    func send(message: String, user: ChatUser) {
+        apiManager.send(message: message, user: user)
     }
     
     func signOut() {

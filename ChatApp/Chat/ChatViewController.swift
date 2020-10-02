@@ -59,7 +59,7 @@ class ChatViewController: UIViewController {
     
     @IBAction func sendButtonAction(_ sender: Any) {
         guard let message = messageTexField.text, !message.isEmpty else { return }
-        chatModel.send(message: message)
+        chatModel.send(message: message, user: chatUser)
         messageTexField.text = nil
     }
     

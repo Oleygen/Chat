@@ -132,10 +132,10 @@ class APIManager {
     
     // MARK: - Chat
     
-    func send(message: String) {
+    func send(message: String, user: ChatUser) {
         guard let userEmail = Auth.auth().currentUser?.email else { return }
         let timestamp = String(Date().timeIntervalSince1970)
-        let message = Message(senderName: getUser().name,
+        let message = Message(senderName: user.name,
                               timestamp: timestamp,
                               userEmail: userEmail,
                               message: message)
