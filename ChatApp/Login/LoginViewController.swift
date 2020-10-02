@@ -195,10 +195,16 @@ class LoginViewController: UIViewController {
     
     @objc func keyboardWillShow(notification: NSNotification) {
         keyboardConstraint.constant = -keyboardHeight
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
         keyboardConstraint.constant = 0
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
     }
     
 }
