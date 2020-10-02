@@ -17,6 +17,7 @@ class APIManager {
     private init() {
         messagesDatabase = database.child(chatMessagesPath)
         imagesStorage = storage.child(imagesPath)
+        usernamesDatabase = database.child(usernamesPath)
         setupListener()
     }
     
@@ -31,6 +32,10 @@ class APIManager {
     private let storage = Storage.storage().reference()
     private let imagesStorage: StorageReference
     private let imagesPath = "/images"
+    
+    // Usernames
+    private let usernamesPath = "/usernames"
+    private let usernamesDatabase: DatabaseReference
     
     private func setupListener() {
         messagesDatabase.observe(.childAdded, with: { [weak self] (snapshot) in
@@ -99,6 +104,11 @@ class APIManager {
         }
     }
     
+    func saveUsername(_ username: String) {
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        usernamesDatabase.child(userID).setValue(username)
+    }
+    
     
     // MARK: - Chat
     
@@ -111,7 +121,7 @@ class APIManager {
                               message: message)
         let messageJson = try! JSONEncoder().encode(message)
         let messageJsonString = String(data: messageJson, encoding: .utf8)
-        database.child(chatMessagesPath).childByAutoId().setValue(messageJsonString)
+        messagesDatabase.childByAutoId().setValue(messageJsonString)
     }
     
     func updateAllMessages() {

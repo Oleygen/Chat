@@ -110,6 +110,7 @@ extension SettingsViewController: UITextFieldDelegate {
         self.user?.name = newName
         userIntialsLabel.text = String(newName.prefix(2))
         chatViewController?.setupUser(user!)
+        settingsModel.saveUsername(newName)
         return true
     }
     
