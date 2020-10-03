@@ -76,12 +76,14 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func createAccountScreenButtonAction(_ sender: Any) {
+        if !createAccountView.isHidden { return }
         hideSignIn()
         showCreateAccount()
         disableSigninTabbarButton()
     }
     
     @IBAction func signinScreenButtonAction(_ sender: Any) {
+        if !signinTextFieldsView.isHidden { return }
         showSignIn()
         hideCreateAccount()
         disableCreateAccountTabbarButton()
