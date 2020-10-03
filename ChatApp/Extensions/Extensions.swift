@@ -48,12 +48,15 @@ extension UITableView {
 
 extension String {
     var isCyrillic: Bool {
-        let regex = try! NSRegularExpression(pattern: "[^А-Яа-я]")
+        guard let regex = try? NSRegularExpression(pattern: "[^А-Яа-я]") else {
+            assert(false)
+            return false
+        }
         let range = NSRange(location: 0, length: self.utf16.count)
         return regex.firstMatch(in: self, options: [], range: range) == nil
     }
     func stringHash() -> UInt64 {
-        var result = UInt64 (5381)
+        var result = UInt64(5381)
         let buf = [UInt8](self.utf8)
         for b in buf {
             result = 127 * (result & 0x00ffffffffffffff) + UInt64(b)

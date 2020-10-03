@@ -41,10 +41,10 @@ class APIManager {
         
         messagesDatabase.observe(.childAdded, with: { [weak self] (snapshot) in
             guard let self = self else { return }
-            if let object = snapshot.value as? String {
-                let objectData = object.data(using: .utf8)!
-                let decodedMessage = try! JSONDecoder().decode(Message.self,
-                                                               from: objectData)
+            if let object = snapshot.value as? String,
+               let objectData = object.data(using: .utf8),
+               let decodedMessage = try? JSONDecoder().decode(Message.self,
+                                                              from: objectData) {
                 self.listenerNewMessages?([decodedMessage])
             }
         })
@@ -60,9 +60,12 @@ class APIManager {
         guard let messagesDict = snapshot.value as? [String: String] else { return [] }
         var messages: [Message] = []
         for (_, message) in messagesDict {
-            let messageData = message.data(using: .utf8)!
-            let decodedMessage = try! JSONDecoder().decode(Message.self, from: messageData)
-            messages.append(decodedMessage)
+            if let messageData = message.data(using: .utf8),
+               let decodedMessage = try? JSONDecoder().decode(Message.self,
+                                                              from: messageData) {
+                messages.append(decodedMessage)
+            }
+            
         }
         messages.sort(by: { $0.timestamp < $1.timestamp })
         return messages
@@ -149,7 +152,10 @@ class APIManager {
                               timestamp: timestamp,
                               userEmail: userEmail,
                               message: message)
-        let messageJson = try! JSONEncoder().encode(message)
+        guard let messageJson = try? JSONEncoder().encode(message) else {
+            assert(false)
+            return
+        }
         let messageJsonString = String(data: messageJson, encoding: .utf8)
         messagesDatabase.childByAutoId().setValue(messageJsonString)
     }
