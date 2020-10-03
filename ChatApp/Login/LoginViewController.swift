@@ -203,7 +203,6 @@ class LoginViewController: UIViewController {
         let keyboardRectangle = keyboardFrame.cgRectValue
         let keyboardAccesoryViewHeight: CGFloat = 30
         let keyboardHeight = keyboardRectangle.height + keyboardAccesoryViewHeight
-        if keyboardHeight == -keyboardConstraint.constant { return }
         keyboardConstraint.constant = -keyboardHeight
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
