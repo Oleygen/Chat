@@ -201,7 +201,8 @@ class LoginViewController: UIViewController {
                     .userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
             else { return }
         let keyboardRectangle = keyboardFrame.cgRectValue
-        let keyboardHeight = keyboardRectangle.height
+        let keyboardAccesoryViewHeight: CGFloat = 30
+        let keyboardHeight = keyboardRectangle.height + keyboardAccesoryViewHeight
         if keyboardHeight == -keyboardConstraint.constant { return }
         keyboardConstraint.constant = -keyboardHeight
         UIView.animate(withDuration: 0.5) {
