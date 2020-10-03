@@ -109,11 +109,12 @@ extension SettingsViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        guard let newName = textField.text,
-              let user = user else { return true }
+        guard let newName = textField.text else { return true }
         self.user?.name = newName
         userIntialsLabel.text = String(newName.prefix(2))
-        chatViewController?.setupUser(user)
+        if let user = user {
+            chatViewController?.setupUser(user)
+        }
         settingsModel.saveUsername(newName)
         return true
     }
