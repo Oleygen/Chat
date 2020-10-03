@@ -125,6 +125,7 @@ class ChatViewController: UIViewController {
     }
     
     @objc func handleSwipes(_ sender: UISwipeGestureRecognizer) {
+        view.endEditing(true)
         if (sender.direction == .left) {
             burgerMenu(show: false)
         }
@@ -166,6 +167,7 @@ class ChatViewController: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }
+        chatTableView.scrollToBottomRow()
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
