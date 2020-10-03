@@ -29,6 +29,9 @@ class SettingsModel {
     func setNewPassword(_ password: String) {
         apiManager.changePassword(password) { success in
             assert(success, "error of changing password")
+            if success {
+                self.view.successChangedPassword()
+            }
         }
     }
 }

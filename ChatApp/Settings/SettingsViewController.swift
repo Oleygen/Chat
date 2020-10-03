@@ -40,16 +40,26 @@ class SettingsViewController: UIViewController {
         self.user = user
     }
     
+    func successChangedPassword() {
+        let alert = UIAlertController(title: "Success",
+                                      message: "Password is changed",
+                                      preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok",
+                                      style: UIAlertAction.Style.default,
+                                      handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
     private func setupAvatar(image: UIImage) {
         avatarImageView.image = image
         userIntialsLabel.isHidden = true
     }
     
-    @IBAction func setAvatarButtonAction(_ sender: Any) {
+    @IBAction private func setAvatarButtonAction(_ sender: Any) {
         showImagePicker()
     }
     
-    @IBAction func changePasswordButtonAction(_ sender: Any) {
+    @IBAction private func changePasswordButtonAction(_ sender: Any) {
         let alertController = UIAlertController(title: "Enter new password",
                                                 message: "",
                                                 preferredStyle: UIAlertController.Style.alert)
