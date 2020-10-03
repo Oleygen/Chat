@@ -40,9 +40,10 @@ class SettingsViewController: UIViewController {
         self.user = user
     }
     
-    func successChangedPassword() {
-        let alert = UIAlertController(title: "Success",
-                                      message: "Password is changed",
+    func changedPassword(_ successful: Bool) {
+        let alert = UIAlertController(title: successful ? "Success" : "Fail",
+                                      message: successful ? "Password is changed"
+                                                          : "Password is not changed",
                                       preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok",
                                       style: UIAlertAction.Style.default,
