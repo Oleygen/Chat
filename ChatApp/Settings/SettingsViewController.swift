@@ -53,20 +53,21 @@ class SettingsViewController: UIViewController {
         let alertController = UIAlertController(title: "Enter new password",
                                                 message: "",
                                                 preferredStyle: UIAlertController.Style.alert)
-        alertController.addTextField { (textField : UITextField!) -> Void in
+        alertController.addTextField { _ in
             // textField.placeholder = "Enter new password"
         }
         let saveAction = UIAlertAction(title: "Confirm",
                                        style: UIAlertAction.Style.default,
-                                       handler: { alert -> Void in
-            let passwordTextField = alertController.textFields![0] as UITextField
+                                       handler: { _ in
+            guard let textFields = alertController.textFields else { return }
+            let passwordTextField = textFields[0] as UITextField
             guard let password = passwordTextField.text, !password.isEmpty
                 else { return }
             self.settingsModel.setNewPassword(password)
         })
         let cancelAction = UIAlertAction(title: "Cancel",
                                          style: UIAlertAction.Style.default,
-                                         handler: { (action: UIAlertAction!) -> Void in })
+                                         handler: { _ in })
         alertController.addAction(saveAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
@@ -108,10 +109,11 @@ extension SettingsViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        guard let newName = textField.text else { return true }
+        guard let newName = textField.text,
+              let user = user else { return true }
         self.user?.name = newName
         userIntialsLabel.text = String(newName.prefix(2))
-        chatViewController?.setupUser(user!)
+        chatViewController?.setupUser(user)
         settingsModel.saveUsername(newName)
         return true
     }

@@ -20,6 +20,11 @@ struct ChatUser {
             let defaultUsernameNumber = String(user.uid.stringHash() % 1000)
             self.name = "Пользователь №" + defaultUsernameNumber
         }
-        self.email = user.email!
+        if let email = user.email {
+            self.email = email
+        } else {
+            assert(false)
+            self.email = ""
+        }
     }
 }

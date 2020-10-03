@@ -20,7 +20,8 @@ class LoginModel {
         apiManager.createAccount(email: email,
                                  password: password) { [weak self] (response, error) in
             guard let self = self else { return }
-            guard let _ = response else {
+            guard response != nil else {
+                assert(false, "error \(String(describing: error))")
                 self.authenticationError()
                 return
             }
@@ -33,7 +34,8 @@ class LoginModel {
         apiManager.signIn(email: email,
                           password: password) { [weak self] (response, error) in
             guard let self = self else { return }
-            guard let _ = response else {
+            guard response != nil  else {
+                assert(false, "error \(String(describing: error))")
                 self.authenticationError()
                 return
             }

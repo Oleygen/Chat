@@ -38,10 +38,6 @@ class ChatModel {
         apiManager.signOut()
     }
     
-    func getUser() -> ChatUser {
-        return apiManager.getUser()
-    }
-    
     func downloadAvatar(email: String) {
         apiManager.downloadUserAvatar(email: email) { data in
             if let image = UIImage(data: data) {

@@ -123,23 +123,28 @@ class APIManager {
     }
     
     func getLoggedEmail() -> String {
-        return Firebase.Auth.auth().currentUser!.email!
+        guard let currentUser = Auth.auth().currentUser,
+              let email = currentUser.email else {
+            assert(false)
+            return ""
+        }
+        return email
     }
     
     func getUser(completion: @escaping (ChatUser) -> Void) {
-        let userID = Auth.auth().currentUser!.uid
+        guard let currentUser = Auth.auth().currentUser else {
+            assert(false)
+            return
+        }
+        let userID = currentUser.uid
         usernamesDatabase.child(userID).observeSingleEvent(of: .value) { (snapshot) in
             if let name = snapshot.value as? String {
-                let user = ChatUser(Firebase.Auth.auth().currentUser!, name: name)
+                let user = ChatUser(currentUser, name: name)
                 completion(user)
             } else {
-                completion(ChatUser(Firebase.Auth.auth().currentUser!))
+                completion(ChatUser(currentUser))
             }
         }
-    }
-    
-    func getUser() -> ChatUser {
-        return ChatUser(Firebase.Auth.auth().currentUser!)
     }
     
     
