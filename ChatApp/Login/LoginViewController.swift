@@ -31,6 +31,7 @@ class LoginViewController: UIViewController {
     
     // Keyboard
     @IBOutlet weak var keyboardConstraint: NSLayoutConstraint!
+    private var isKeyboardOpened = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -193,15 +194,18 @@ class LoginViewController: UIViewController {
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
+        if isKeyboardOpened { return }
         guard let keyboardFrame = notification
                     .userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
             else { return }
         let keyboardRectangle = keyboardFrame.cgRectValue
         let keyboardHeight = keyboardRectangle.height
+        if keyboardHeight == -keyboardConstraint.constant { return }
         keyboardConstraint.constant = -keyboardHeight
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }
+        isKeyboardOpened = true
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
@@ -209,6 +213,7 @@ class LoginViewController: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }
+        isKeyboardOpened = false
     }
     
 }
