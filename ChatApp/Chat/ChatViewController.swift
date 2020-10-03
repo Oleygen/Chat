@@ -58,6 +58,9 @@ class ChatViewController: UIViewController {
 
         view.addGestureRecognizer(leftSwipe)
         view.addGestureRecognizer(rightSwipe)
+        
+        let touch = UITapGestureRecognizer(target: self, action: #selector(tapGesture(_:)))
+        view.addGestureRecognizer(touch)
     }
     
     @IBAction func sendButtonAction(_ sender: Any) {
@@ -138,8 +141,7 @@ class ChatViewController: UIViewController {
     
     // MARK: - Keyboard
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
+    @objc func tapGesture(_ sender: UITapGestureRecognizer? = nil) {
         view.endEditing(true)
     }
     
