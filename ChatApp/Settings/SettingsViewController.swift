@@ -115,7 +115,7 @@ extension SettingsViewController: UITextFieldDelegate {
         if let user = user {
             chatViewController?.setupUser(user)
         }
-        settingsModel.saveUsername(newName)
+        settingsModel.saveUsernameToServer(newName)
         return true
     }
     

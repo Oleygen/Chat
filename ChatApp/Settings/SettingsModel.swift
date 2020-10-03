@@ -22,7 +22,7 @@ class SettingsModel {
         apiManager.saveImageToServer(imageData, for: userEmail)
     }
     
-    func saveUsername(_ username: String) {
+    func saveUsernameToServer(_ username: String) {
         apiManager.saveUsername(username)
     }
     
