@@ -32,7 +32,7 @@ class LoginModel {
     func signIn(email: String,
                 password: String) {
         apiManager.signIn(email: email,
-                          password: password) { [weak self] (response, error) in
+                          password: password) { [weak self] (response, _) in
             guard let self = self else { return }
             guard response != nil  else {
                 self.authenticationError()
