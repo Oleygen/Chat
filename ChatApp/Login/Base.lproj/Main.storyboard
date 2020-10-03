@@ -19,10 +19,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="170" translatesAutoresizingMaskIntoConstraints="NO" id="MxP-ar-pWJ">
-                                        <rect key="frame" x="82" y="15" width="250" height="20"/>
+                                        <rect key="frame" x="48" y="6.5" width="318" height="37"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Fh-vL-Ho6">
-                                                <rect key="frame" x="0.0" y="0.0" width="40" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="74" height="37"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="0Fh-vL-Ho6" secondAttribute="height" multiplier="2:1" id="dIe-hT-uiy"/>
                                                 </constraints>
@@ -34,7 +34,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xm-V1-aIW">
-                                                <rect key="frame" x="210" y="0.0" width="40" height="20"/>
+                                                <rect key="frame" x="244" y="0.0" width="74" height="37"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="1xm-V1-aIW" secondAttribute="height" multiplier="2:1" id="pMi-hd-8ya"/>
                                                 </constraints>
@@ -51,7 +51,6 @@
                                 <constraints>
                                     <constraint firstItem="MxP-ar-pWJ" firstAttribute="centerX" secondItem="6Oc-dd-Wey" secondAttribute="centerX" id="0wO-Qf-vjU"/>
                                     <constraint firstItem="MxP-ar-pWJ" firstAttribute="centerY" secondItem="6Oc-dd-Wey" secondAttribute="centerY" id="9Ml-XT-EqS"/>
-                                    <constraint firstItem="MxP-ar-pWJ" firstAttribute="width" secondItem="6Oc-dd-Wey" secondAttribute="height" multiplier="125:25" id="UvL-mA-Buy"/>
                                     <constraint firstAttribute="height" constant="50" id="mX2-Fo-4yJ"/>
                                 </constraints>
                             </view>
