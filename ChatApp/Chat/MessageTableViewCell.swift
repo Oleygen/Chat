@@ -10,10 +10,10 @@ import UIKit
 
 class MessageTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var messageText: UILabel!
-    @IBOutlet weak var leftInsetConstraint: NSLayoutConstraint!
-    @IBOutlet weak var rightInsetCostraint: NSLayoutConstraint!
-    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet private weak var messageText: UILabel!
+    @IBOutlet private weak var leftInsetConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var rightInsetCostraint: NSLayoutConstraint!
+    @IBOutlet private weak var usernameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

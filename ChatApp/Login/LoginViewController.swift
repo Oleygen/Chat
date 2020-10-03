@@ -14,23 +14,23 @@ class LoginViewController: UIViewController {
     let loginModel = LoginModel()
     
     // Registration
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
-    @IBOutlet weak var createAccountButton: UIButton!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var confirmPasswordTextField: UITextField!
+    @IBOutlet private weak var createAccountButton: UIButton!
     
-    @IBOutlet weak var createAccountTabbarButton: UIButton!
-    @IBOutlet weak var signinTabbarButton: UIButton!
-    @IBOutlet weak var createAccountView: UIView!
+    @IBOutlet private weak var createAccountTabbarButton: UIButton!
+    @IBOutlet private weak var signinTabbarButton: UIButton!
+    @IBOutlet private weak var createAccountView: UIView!
     
     // Signin
-    @IBOutlet weak var signinEmailTextField: UITextField!
-    @IBOutlet weak var signinPasswordTextField: UITextField!
-    @IBOutlet weak var signinTextFieldsView: UIView!
-    @IBOutlet weak var signinButton: UIButton!
+    @IBOutlet private weak var signinEmailTextField: UITextField!
+    @IBOutlet private weak var signinPasswordTextField: UITextField!
+    @IBOutlet private weak var signinTextFieldsView: UIView!
+    @IBOutlet private weak var signinButton: UIButton!
     
     // Keyboard
-    @IBOutlet weak var keyboardConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var keyboardConstraint: NSLayoutConstraint!
     private var isKeyboardOpened = false
     
     override func viewDidLoad() {
