@@ -109,7 +109,7 @@ class APIManager {
                             completion: { (_, error) in
             assert(error != nil, "error updatePassword \(String(describing: error))")
             Auth.auth().currentUser?.updatePassword(to: newPassword) { (error) in
-                assert(error != nil, "error updatePassword \(String(describing: error))")
+                assert(error == nil, "error updatePassword \(String(describing: error))")
                 let isSuccess = error == nil
                 completion(isSuccess)
             }
@@ -191,7 +191,7 @@ class APIManager {
             guard let imageUrl = url else { return }
             let request = URLRequest(url: imageUrl)
             URLSession.shared.dataTask(with: request) { responseData, _, error in
-                assert(error != nil)
+                assert(error == nil)
                 DispatchQueue.main.async {
                     if let data = responseData {
                         completion(data)
