@@ -50,7 +50,7 @@ class APIManager {
         })
         messagesDatabase.observe(.value, with: { [weak self] (snapshot) in
             guard let self = self else { return }
-            if let _ = snapshot.value as? [String: String] {
+            if snapshot.value != nil {
                 self.listenerAllMessages?(self.decodeMessages(snapshot))
             }
         })
