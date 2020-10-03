@@ -190,6 +190,7 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MessageTableViewCell") as? MessageTableViewCell {
             cell.configureCell(isMy: messages[indexPath.row].userEmail == chatUser.email,
                                messages[indexPath.row])
+            return cell
         }
         assert(false)
         return UITableViewCell()

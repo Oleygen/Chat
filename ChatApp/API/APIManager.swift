@@ -77,8 +77,7 @@ class APIManager {
                        password: String,
                        completion: @escaping (AuthDataResult?, Error?) -> Void) {
         Auth.auth().createUser(withEmail: email,
-                               password: password)
-                               { (user: AuthDataResult?, error: Error?) in
+                               password: password) { (user: AuthDataResult?, error: Error?) in
             completion(user, error)
         }
     }
@@ -96,7 +95,8 @@ class APIManager {
         do {
             try Firebase.Auth.auth().signOut()
         } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
+            assert(false)
+            print("Error signing out: %@", signOutError)
         }
     }
     
@@ -106,7 +106,7 @@ class APIManager {
         let credential = EmailAuthProvider.credential(withEmail: email,
                                                       password: newPassword)
         user.reauthenticate(with: credential,
-                            completion: { (authDataResult, error) in
+                            completion: { (_, error) in
             assert(error != nil, "error updatePassword \(String(describing: error))")
             Auth.auth().currentUser?.updatePassword(to: newPassword) { (error) in
                 assert(error != nil, "error updatePassword \(String(describing: error))")
@@ -172,7 +172,7 @@ class APIManager {
     
     func saveImageToServer(_ imageData: Data, for userEmail: String) {
         let imageReference = imagesStorage.child(userEmail)
-        imageReference.putData(imageData, metadata: nil) { metadata, error in
+        imageReference.putData(imageData, metadata: nil) { _, error in
             if let error = error {
                 assert(false, "error image save \(error)")
             }
@@ -185,9 +185,12 @@ class APIManager {
         imageReference.downloadURL { (url, error) in
             guard let imageUrl = url else { return }
             let request = URLRequest(url: imageUrl)
-            URLSession.shared.dataTask(with: request) { data, response, error in
+            URLSession.shared.dataTask(with: request) { responseData, _, error in
+                assert(error != nil)
                 DispatchQueue.main.async {
-                    completion(data!)
+                    if let data = responseData {
+                        completion(data)
+                    }
                 }
             }.resume()
         }

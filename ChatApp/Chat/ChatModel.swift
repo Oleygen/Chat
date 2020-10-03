@@ -13,7 +13,7 @@ class ChatModel {
     
     let apiManager = APIManager.shared
     
-    weak var view: ChatViewController!
+    unowned var view: ChatViewController
     
     init(view: ChatViewController) {
         self.view = view
@@ -44,8 +44,9 @@ class ChatModel {
     
     func downloadAvatar(email: String) {
         apiManager.downloadUserAvatar(email: email) { data in
-            let image = UIImage(data: data)!
-            self.view!.setupUserAvatar(image)
+            if let image = UIImage(data: data) {
+                self.view.setupUserAvatar(image)
+            }
         }
     }
 }
