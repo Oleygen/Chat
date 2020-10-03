@@ -60,7 +60,9 @@ class SettingsViewController: UIViewController {
                                        style: UIAlertAction.Style.default,
                                        handler: { alert -> Void in
             let passwordTextField = alertController.textFields![0] as UITextField
-            let _ = passwordTextField.text
+            guard let password = passwordTextField.text, !password.isEmpty
+                else { return }
+            self.settingsModel.setNewPassword(password)
         })
         let cancelAction = UIAlertAction(title: "Cancel",
                                          style: UIAlertAction.Style.default,

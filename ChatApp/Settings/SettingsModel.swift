@@ -25,4 +25,10 @@ class SettingsModel {
     func saveUsername(_ username: String) {
         apiManager.saveUsername(username)
     }
+    
+    func setNewPassword(_ password: String) {
+        apiManager.changePassword(password) { success in
+            assert(success, "error of changing password")
+        }
+    }
 }

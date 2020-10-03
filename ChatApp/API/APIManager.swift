@@ -98,10 +98,19 @@ class APIManager {
     
     func changePassword(_ newPassword: String,
                         completion: @escaping (_ success: Bool) -> Void) {
-        Auth.auth().currentUser?.updatePassword(to: newPassword) { (error) in
-            let isSuccess = error == nil
-            completion(isSuccess)
-        }
+        guard let user = Auth.auth().currentUser, let email = user.email else { return }
+        let credential = EmailAuthProvider.credential(withEmail: email,
+                                                      password: newPassword)
+        user.reauthenticate(with: credential,
+                            completion: { (authDataResult, error) in
+            assert(error != nil, "error updatePassword \(error)")
+            Auth.auth().currentUser?.updatePassword(to: newPassword) { (error) in
+                assert(error != nil, "error updatePassword \(error)")
+                let isSuccess = error == nil
+                completion(isSuccess)
+            }
+        })
+        
     }
     
     func saveUsername(_ username: String) {
