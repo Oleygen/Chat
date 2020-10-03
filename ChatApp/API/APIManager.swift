@@ -38,6 +38,7 @@ class APIManager {
     private let usernamesDatabase: DatabaseReference
     
     private func setupListener() {
+        
         messagesDatabase.observe(.childAdded, with: { [weak self] (snapshot) in
             guard let self = self else { return }
             if let object = snapshot.value as? String {

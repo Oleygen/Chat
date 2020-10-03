@@ -180,6 +180,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B75E00232523AC380054EF32 /* Build configuration list for PBXNativeTarget "ChatApp" */;
 			buildPhases = (
+				B75CE4772529032A005C121A /* ShellScript */,
 				009537A027AE3CB8DA5F5FBC /* [CP] Check Pods Manifest.lock */,
 				B75E000B2523AC370054EF32 /* Sources */,
 				B75E000C2523AC370054EF32 /* Frameworks */,
@@ -284,6 +285,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatApp/Pods-ChatApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		B75CE4772529032A005C121A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -1,0 +1,36 @@
+disabled_rules:
+  - variable_name
+  - vertical_whitespace
+  - trailing_whitespace
+  - file_length
+  - type_name
+  - control_statement
+  - for_where
+  - shorthand_operator
+  - type_body_length
+opt_in_rules:
+  - private_outlet
+  - force_unwrapping
+  - overridden_super_call
+#force_unwrapping: error
+line_length: 
+  warning: 120
+type_body_length:
+  warning: 400
+cyclomatic_complexity:
+  warning: 10
+  error: 20
+excluded:
+  - Pods/
+  - VMediaSecureKit/
+  - VMediaNpasKit/
+  - VMediaApiKit/
+  - VMediaEngineKit/
+  - VMediaStreamKit/
+  - VMediaUIKit/
+  - LocalPods/
+  - Carthage/
+  - Frameworks/
+  - Library/Strings.swift
+  - bin/strings.swift
+reporter: "xcode"
