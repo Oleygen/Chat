@@ -103,9 +103,9 @@ class APIManager {
                                                       password: newPassword)
         user.reauthenticate(with: credential,
                             completion: { (authDataResult, error) in
-            assert(error != nil, "error updatePassword \(error)")
+            assert(error != nil, "error updatePassword \(String(describing: error))")
             Auth.auth().currentUser?.updatePassword(to: newPassword) { (error) in
-                assert(error != nil, "error updatePassword \(error)")
+                assert(error != nil, "error updatePassword \(String(describing: error))")
                 let isSuccess = error == nil
                 completion(isSuccess)
             }
