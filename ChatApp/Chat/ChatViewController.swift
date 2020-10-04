@@ -164,10 +164,11 @@ class ChatViewController: UIViewController {
         let keyboardRectangle = keyboardFrame.cgRectValue
         let keyboardHeight = keyboardRectangle.height
         keyboardConstraint.constant = -keyboardHeight
-        UIView.animate(withDuration: 0.5) {
-            self.view.layoutIfNeeded()
-        }
-        chatTableView.scrollToBottomRow()
+        UIView.animate(withDuration: 0.5,
+                       animations: { self.view.layoutIfNeeded() },
+                       completion: { _ in
+            self.chatTableView.scrollToBottomRow()
+        })
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
