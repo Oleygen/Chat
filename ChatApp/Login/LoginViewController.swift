@@ -41,6 +41,7 @@ class LoginViewController: UIViewController {
         signinTextFieldsView.isHidden = true
         disableSigninTabbarButton()
         registerKeyboardEvents()
+        setupGestures()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -76,17 +77,43 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func createAccountScreenButtonAction(_ sender: Any) {
-        if !createAccountView.isHidden { return }
-        hideSignIn()
         showCreateAccount()
-        disableSigninTabbarButton()
     }
     
     @IBAction func signinScreenButtonAction(_ sender: Any) {
-        if !signinTextFieldsView.isHidden { return }
         showSignIn()
-        hideCreateAccount()
+    }
+    
+    private func showSignIn() {
+        if !signinTextFieldsView.isHidden { return }
+        showSignInFieldsView()
+        hideCreateAccountFieldsView()
         disableCreateAccountTabbarButton()
+    }
+    
+    private func showCreateAccount() {
+        if !createAccountView.isHidden { return }
+        hideSignInFieldsView()
+        showCreateAccountFieldsView()
+        disableSigninTabbarButton()
+    }
+    
+    private func setupGestures() {
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        leftSwipe.direction = .left
+        rightSwipe.direction = .right
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
+    }
+    
+    @objc func handleSwipes(_ sender: UISwipeGestureRecognizer) {
+        if (sender.direction == .left) {
+            showSignIn()
+        }
+        if (sender.direction == .right) {
+            showCreateAccount()
+        }
     }
     
     
@@ -99,28 +126,28 @@ class LoginViewController: UIViewController {
         return transition
     }
     
-    private func hideSignIn() {
+    private func hideSignInFieldsView() {
         let transition = createAnimation()
         transition.subtype = CATransitionSubtype.fromLeft
         signinTextFieldsView.layer.add(transition, forKey: kCATransition)
         signinTextFieldsView.isHidden = true
     }
     
-    private func showSignIn() {
+    private func showSignInFieldsView() {
         let transition = createAnimation()
         transition.subtype = CATransitionSubtype.fromRight
         signinTextFieldsView.layer.add(transition, forKey: kCATransition)
         signinTextFieldsView.isHidden = false
     }
     
-    private func showCreateAccount() {
+    private func showCreateAccountFieldsView() {
         let transition = createAnimation()
         transition.subtype = CATransitionSubtype.fromLeft
         createAccountView.layer.add(transition, forKey: kCATransition)
         createAccountView.isHidden = false
     }
     
-    private func hideCreateAccount() {
+    private func hideCreateAccountFieldsView() {
         let transition = createAnimation()
         transition.subtype = CATransitionSubtype.fromRight
         createAccountView.layer.add(transition, forKey: kCATransition)
