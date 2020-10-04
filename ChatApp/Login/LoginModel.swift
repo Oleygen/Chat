@@ -22,7 +22,7 @@ class LoginModel {
             guard let self = self else { return }
             guard response != nil else {
                 assert(false, "error \(String(describing: error))")
-                self.authenticationError()
+                self.view.showError()
                 return
             }
             self.view.successSignIn()
@@ -35,16 +35,11 @@ class LoginModel {
                           password: password) { [weak self] (response, _) in
             guard let self = self else { return }
             guard response != nil  else {
-                self.authenticationError()
+                self.view.showError()
                 return
             }
             self.view.successSignIn()
         }
-    }
-    
-    
-    private func authenticationError() {
-        view.showError()
     }
     
 }
