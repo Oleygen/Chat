@@ -20,17 +20,4 @@ type_body_length:
 cyclomatic_complexity:
   warning: 10
   error: 20
-excluded:
-  - Pods/
-  - VMediaSecureKit/
-  - VMediaNpasKit/
-  - VMediaApiKit/
-  - VMediaEngineKit/
-  - VMediaStreamKit/
-  - VMediaUIKit/
-  - LocalPods/
-  - Carthage/
-  - Frameworks/
-  - Library/Strings.swift
-  - bin/strings.swift
 reporter: "xcode"
