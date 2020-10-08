@@ -12,12 +12,32 @@ import Firebase
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var coordinator: MainCoordinator?
 
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
+        
+        let navController = UINavigationController()
+        coordinator = MainCoordinator(navigationController: navController)
+        coordinator?.start()
+        
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window: UIWindow = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window.windowScene = windowScene
+        window.rootViewController = navController
+        window.makeKeyAndVisible()
+        self.window = window
     }
+    
+//    private func openChatViewController(windowScene: UIWindowScene) {
+//        let window: UIWindow = UIWindow(frame: windowScene.coordinateSpace.bounds)
+//        window.windowScene = windowScene
+//        window.rootViewController = ChatViewController(nibName: "ChatViewController", bundle: nil)
+//        window.makeKeyAndVisible()
+//        self.window = window
+//    }
+    
     
 
     func sceneDidDisconnect(_ scene: UIScene) {

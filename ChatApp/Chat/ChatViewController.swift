@@ -11,6 +11,7 @@ import UIKit
 class ChatViewController: UIViewController {
     
     private lazy var chatModel = ChatModel(view: self)
+    weak var coordinator: MainCoordinator?
     
     private var chatUser: ChatUser!
     
@@ -70,16 +71,13 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func settingsButtonAction(_ sender: Any) {
-        let settingsViewController = SettingsViewController()
-        settingsViewController.setupUser(chatUser)
-        settingsViewController.chatViewController = self
-        settingsViewController.modalPresentationStyle = .popover
-        present(settingsViewController, animated: true, completion: nil)
+        coordinator?.showSettings(chatUser: chatUser)
     }
     
     @IBAction func logoutButtonAction(_ sender: Any) {
-        chatModel.signOut()
+//        chatModel.signOut()
         dismiss(animated: true)
+        coordinator?.dismiss()
     }
     
     func didReceive(allMessages: [Message]) {

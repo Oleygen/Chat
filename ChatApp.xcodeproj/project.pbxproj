@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		425C7CC1C8C6B3D303F9A0B6 /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9799F29707AC03212700C11E /* Pods_ChatApp.framework */; };
+		B75CE4BB252E6AD1005C121A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75CE4BA252E6AD1005C121A /* Coordinator.swift */; };
+		B75CE4BD252E8FEA005C121A /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75CE4BC252E8FEA005C121A /* Storyboarded.swift */; };
+		B75CE4BF252E9004005C121A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75CE4BE252E9004005C121A /* MainCoordinator.swift */; };
 		B75E00132523AC370054EF32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75E00122523AC370054EF32 /* AppDelegate.swift */; };
 		B75E00152523AC370054EF32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75E00142523AC370054EF32 /* SceneDelegate.swift */; };
 		B75E00172523AC370054EF32 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75E00162523AC370054EF32 /* LoginViewController.swift */; };
@@ -33,6 +36,9 @@
 /* Begin PBXFileReference section */
 		5E878EB7C327C76037518484 /* Pods-ChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.debug.xcconfig"; path = "Target Support Files/Pods-ChatApp/Pods-ChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9799F29707AC03212700C11E /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B75CE4BA252E6AD1005C121A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B75CE4BC252E8FEA005C121A /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		B75CE4BE252E9004005C121A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		B75E000F2523AC370054EF32 /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B75E00122523AC370054EF32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B75E00142523AC370054EF32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +85,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B75CE4C0252E9074005C121A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				B75CE4BA252E6AD1005C121A /* Coordinator.swift */,
+				B75CE4BE252E9004005C121A /* MainCoordinator.swift */,
+				B75CE4BC252E8FEA005C121A /* Storyboarded.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		B75E00062523AC370054EF32 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +118,7 @@
 			children = (
 				B75E00122523AC370054EF32 /* AppDelegate.swift */,
 				B75E00142523AC370054EF32 /* SceneDelegate.swift */,
+				B75CE4C0252E9074005C121A /* Coordinator */,
 				B7CFF9322523AE6500B6DA6D /* Login */,
 				B7CFF93D2523CCCF00B6DA6D /* Chat */,
 				B7CFF94A25243B1800B6DA6D /* Settings */,
@@ -312,11 +329,14 @@
 			files = (
 				B7CFF95325247AFA00B6DA6D /* ChatUser.swift in Sources */,
 				B75E00172523AC370054EF32 /* LoginViewController.swift in Sources */,
+				B75CE4BD252E8FEA005C121A /* Storyboarded.swift in Sources */,
 				B7CFF9342523AE9300B6DA6D /* LoginModel.swift in Sources */,
 				B7CFF948252429E900B6DA6D /* MessageTableViewCell.swift in Sources */,
 				B7CFF9442524161700B6DA6D /* Message.swift in Sources */,
 				B7CFF941252407B800B6DA6D /* ChatModel.swift in Sources */,
+				B75CE4BB252E6AD1005C121A /* Coordinator.swift in Sources */,
 				B7CFF9382523BB8D00B6DA6D /* APIManager.swift in Sources */,
+				B75CE4BF252E9004005C121A /* MainCoordinator.swift in Sources */,
 				B75E00132523AC370054EF32 /* AppDelegate.swift in Sources */,
 				B7CFF93B2523CB0F00B6DA6D /* ChatViewController.swift in Sources */,
 				B7CFF94D25243E8A00B6DA6D /* Extensions.swift in Sources */,

@@ -9,9 +9,10 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, Storyboarded {
     
     let loginModel = LoginModel()
+    weak var coordinator: MainCoordinator?
     
     // Registration
     @IBOutlet private weak var emailTextField: UITextField!
@@ -42,6 +43,7 @@ class LoginViewController: UIViewController {
         disableSigninTabbarButton()
         registerKeyboardEvents()
         setupGestures()
+        navigationController?.isNavigationBarHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -176,9 +178,7 @@ class LoginViewController: UIViewController {
     }
     
     private func presentChatViewController() {
-        let chatViewController = ChatViewController()
-        chatViewController.modalPresentationStyle = .overCurrentContext
-        present(chatViewController, animated: true, completion: nil)
+        coordinator?.showChat()
     }
     
     

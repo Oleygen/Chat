@@ -11,6 +11,7 @@ import UIKit
 class SettingsViewController: UIViewController {
     
     private lazy var settingsModel = SettingsModel(view: self)
+    weak var coordinator: MainCoordinator?
 
     private var user: ChatUser?
     weak var chatViewController: ChatViewController?

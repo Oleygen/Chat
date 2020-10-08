@@ -64,3 +64,9 @@ extension String {
         return result
     }
 }
+
+extension Array {
+    func item(at index: Int) -> Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
+}
