@@ -14,7 +14,9 @@ class SettingsViewController: UIViewController {
     weak var coordinator: MainCoordinator?
 
     private var user: ChatUser?
-    weak var chatViewController: ChatViewController?
+    
+    var updateUserAction: ((ChatUser) -> Void)?
+    var updateUserAvatarAction: ((UIImage) -> Void)?
     
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var setAvatarPhotoButton: UIButton!
@@ -108,7 +110,7 @@ extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationC
         dismiss(animated: true)
         setupAvatar(image: image)
         user?.avatar = image
-        chatViewController?.setupUserAvatar(image)
+        updateUserAvatarAction?(image)
         settingsModel.saveImageToServer(imageData, for: userEmail)
     }
     
@@ -125,7 +127,7 @@ extension SettingsViewController: UITextFieldDelegate {
         self.user?.name = newName
         userIntialsLabel.text = String(newName.prefix(2))
         if let user = user {
-            chatViewController?.setupUser(user)
+            updateUserAction?(user)
         }
         settingsModel.saveUsernameToServer(newName)
         return true

@@ -35,7 +35,18 @@ class MainCoordinator: Coordinator {
     }
     
     func showSettings(chatUser: ChatUser) {
+        guard let chatvc = self.navigationController.viewControllers
+                               .item(at: 1) as? ChatViewController else {
+            assert(false)
+            return
+        }
         let settingsViewController = SettingsViewController()
+        settingsViewController.updateUserAction = { user in
+            chatvc.setupUser(user)
+        }
+        settingsViewController.updateUserAvatarAction = { image in
+            chatvc.setupUserAvatar(image)
+        }
         settingsViewController.setupUser(chatUser)
         settingsViewController.modalPresentationStyle = .popover
         navigationController.present(settingsViewController, animated: true)

@@ -75,7 +75,7 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func logoutButtonAction(_ sender: Any) {
-//        chatModel.signOut()
+        chatModel.signOut()
         dismiss(animated: true)
         coordinator?.dismiss()
     }
