@@ -21,7 +21,6 @@ class LoginModel {
                                  password: password) { [weak self] (response, error) in
             guard let self = self else { return }
             guard response != nil else {
-                assert(false, "error \(String(describing: error))")
                 self.view.showError()
                 return
             }
